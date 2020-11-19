@@ -10,6 +10,7 @@ import { createBrowserHistory } from 'history';
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialState = {};
 
