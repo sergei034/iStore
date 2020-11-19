@@ -1,7 +1,4 @@
-const initialState = {
-  loading: true,
-  products: null,
-};
+const initialState = {};
 
 export default (state = initialState) => {
   return state;

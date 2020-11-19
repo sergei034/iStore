@@ -1,7 +1,0 @@
-html, body {
-  margin: 0;
-}
-
-html, body > div#root {
-  height: 100vh
-}
