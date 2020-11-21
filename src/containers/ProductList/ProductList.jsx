@@ -12,9 +12,9 @@ const ProductList = (props) => {
   } = props;
 
   return (
-    <Container className="h-100">
-      <Row className="h-100 d-flex justify-content-center">
-        {loading ? <AppSpinner /> : (
+    <Container>
+      <Row className="d-flex">
+        {loading ? <AppSpinner  /> : (
           {/* products.map(product => <ProductItem /> */}
         )}
       </Row>

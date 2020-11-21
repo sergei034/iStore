@@ -1,15 +1,20 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
+import AppHeader from './containers/AppHeader';
 import ProductList from './containers/ProductList';
 import './main.css';
 
 const App = () => {
   return (
-    <Switch>
-      <Route exact path="/" component={ProductList} />
-      <Redirect to="/" />
-    </Switch>
+    <>
+      <AppHeader />
+      <Switch>
+        <Route exact path="/products" component={ProductList} />
+        <Route exact path="/cart" render={() => (<h1 className="text-center">Your cart</h1>)} />
+        <Redirect to="/products" />
+      </Switch>
+    </>
   );
 };
 
