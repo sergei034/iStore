@@ -1,0 +1,26 @@
+.product-card {
+  width: 280px;
+  margin: 12px;
+}
+
+.product-card:hover {
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0 0 6px 0 #000000;
+  transform: scale(1.05);
+}
+
+.product-card:active {
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0 0 8px 0 #000000;
+}
+
+.heart-icon:hover, .cart-icon:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.25);
+}
+
+.heart-icon:active, .cart-icon:active {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.5);
+}
