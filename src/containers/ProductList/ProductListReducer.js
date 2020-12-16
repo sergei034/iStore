@@ -1,178 +1,40 @@
+import * as constants from './constants';
+
 const initialState = {
-  loading: false,
-  // TODO: replace with 'null'
-  products: [
-    {
-      "id": 1,
-      "categoryId": 1,
-      "camera": "12 + 12 MP",
-      "color": "Black",
-      "cpu": "Apple A14 Bionic",
-      "display": 6.1,
-      "image": "../../../../assets/images/products/phones/iphone-12.png",
-      "name": "iPhone 12",
-      "memory": "64 Gb",
-      "price": 699,
-      "size": "146.7 x 71.5 x 7.4 mm",
-      "weight": "162 g"
-    },
-    {
-      "id": 2,
-      "categoryId": 1,
-      "camera": "12 + 12 MP",
-      "color": "Black",
-      "cpu": "Apple A14 Bionic",
-      "display": 6.1,
-      "image": "../../../../assets/images/products/phones/iphone-12.png",
-      "name": "iPhone 12",
-      "memory": "128 Gb",
-      "price": 799,
-      "size": "146.7 x 71.5 x 7.4 mm",
-      "weight": "162 g"
-    },
-    {
-      "id": 3,
-      "categoryId": 1,
-      "camera": "12 + 12 MP",
-      "color": "Black",
-      "cpu": "Apple A14 Bionic",
-      "display": 6.1,
-      "image": "../../../../assets/images/products/phones/iphone-12.png",
-      "name": "iPhone 12",
-      "memory": "256 Gb",
-      "price": 899,
-      "size": "146.7 x 71.5 x 7.4 mm",
-      "weight": "162 g"
-    },
-    {
-      "id": 4,
-      "categoryId": 1,
-      "camera": "12 + 12 MP",
-      "color": "Black",
-      "cpu": "Apple A14 Bionic",
-      "display": 5.4,
-      "image": "../../../../assets/images/products/phones/iphone-12-mini.png",
-      "name": "iPhone 12 mini",
-      "memory": "64 Gb",
-      "price": 799,
-      "size": "131.5 x 64.2 x 7.4 mm",
-      "weight": "133 g"
-    },
-    {
-      "id": 5,
-      "categoryId": 1,
-      "camera": "12 + 12 MP",
-      "color": "Black",
-      "cpu": "Apple A14 Bionic",
-      "display": 5.4,
-      "image": "../../../../assets/images/products/phones/iphone-12-mini.png",
-      "name": "iPhone 12 mini",
-      "memory": "128 Gb",
-      "price": 899,
-      "size": "131.5 x 64.2 x 7.4 mm",
-      "weight": "133 g"
-    },
-    {
-      "id": 6,
-      "categoryId": 1,
-      "camera": "12 + 12 MP",
-      "color": "Black",
-      "cpu": "Apple A14 Bionic",
-      "display": 5.4,
-      "image": "../../../../assets/images/products/phones/iphone-12-mini.png",
-      "name": "iPhone 12 mini",
-      "memory": "256 Gb",
-      "price": 999,
-      "size": "131.5 x 64.2 x 7.4 mm",
-      "weight": "133 g"
-    },
-    {
-      "id": 7,
-      "categoryId": 1,
-      "camera": "12 + 12 + 12 MP",
-      "color": "Graphite",
-      "cpu": "Apple A14 Bionic",
-      "display": 6.1,
-      "image": "../../../../assets/images/products/phones/iphone-12-pro.png",
-      "name": "iPhone 12 Pro",
-      "memory": "128 Gb",
-      "price": 999,
-      "size": "146.7 x 71.5 x 7.4 mm",
-      "weight": "187 g"
-    },
-    {
-      "id": 8,
-      "categoryId": 1,
-      "camera": "12 + 12 + 12 MP",
-      "color": "Graphite",
-      "cpu": "Apple A14 Bionic",
-      "display": 6.1,
-      "image": "../../../../assets/images/products/phones/iphone-12-pro.png",
-      "name": "iPhone 12 Pro",
-      "memory": "256 Gb",
-      "price": 1099,
-      "size": "146.7 x 71.5 x 7.4 mm",
-      "weight": "187 g"
-    },
-    {
-      "id": 9,
-      "categoryId": 1,
-      "camera": "12 + 12 + 12 MP",
-      "color": "Graphite",
-      "cpu": "Apple A14 Bionic",
-      "display": 6.1,
-      "image": "../../../../assets/images/products/phones/iphone-12-pro.png",
-      "name": "iPhone 12 Pro",
-      "memory": "512 Gb",
-      "price": 1199,
-      "size": "146.7 x 71.5 x 7.4 mm",
-      "weight": "187 g"
-    },
-    {
-      "id": 10,
-      "categoryId": 1,
-      "camera": "12 + 12 + 12 MP",
-      "color": "Graphite",
-      "cpu": "Apple A14 Bionic",
-      "display": 6.7,
-      "image": "../../../../assets/images/products/phones/iphone-12-pro-max.png",
-      "name": "iPhone 12 Pro",
-      "memory": "128 Gb",
-      "price": 1099,
-      "size": "160.8 x 78.1 x 7.4 mm",
-      "weight": "228 g"
-    },
-    {
-      "id": 11,
-      "categoryId": 1,
-      "camera": "12 + 12 + 12 MP",
-      "color": "Graphite",
-      "cpu": "Apple A14 Bionic",
-      "display": 6.7,
-      "image": "../../../../assets/images/products/phones/iphone-12-pro-max.png",
-      "name": "iPhone 12 Pro",
-      "memory": "256 Gb",
-      "price": 1199,
-      "size": "160.8 x 78.1 x 7.4 mm",
-      "weight": "228 g"
-    },
-    {
-      "id": 12,
-      "categoryId": 1,
-      "camera": "12 + 12 + 12 MP",
-      "color": "Graphite",
-      "cpu": "Apple A14 Bionic",
-      "display": 6.7,
-      "image": "../../../../assets/images/products/phones/iphone-12-pro-max.png",
-      "name": "iPhone 12 Pro",
-      "memory": "512 Gb",
-      "price": 1299,
-      "size": "160.8 x 78.1 x 7.4 mm",
-      "weight": "228 g"
-    }
-  ]
+  error: null,
+  loading: true,
+  products: null,
+  success: false,
 };
 
-export default (state = initialState) => {
-  return state;
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case constants.GET_PRODUCTS_REQUEST: {
+      return {
+        ...state,
+        error: null,
+        loading: true,
+        success: false,
+      };
+    }
+    case constants.GET_PRODUCTS_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        products: action.payload.products,
+        success: true,
+      };
+    }
+    case constants.GET_PRODUCTS_ERROR: {
+      return {
+        ...state,
+        error: action.payload.error,
+        loading: false,
+        success: false,
+      };
+    }
+    default:
+      return state;
+  }
 };

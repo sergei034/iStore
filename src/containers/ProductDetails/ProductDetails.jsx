@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart} from '@fortawesome/free-solid-svg-icons';
-import { faHome} from '@fortawesome/free-solid-svg-icons';
-import { faCartPlus} from '@fortawesome/free-solid-svg-icons';
+import { AiOutlineHeart, AiFillHeart, AiOutlineHome } from 'react-icons/ai';
+import { IoCartOutline, IoCart } from 'react-icons/io5';
 
 // TODO: fix product image
 import productImage from '../../assets/images/products/phones/iphone-12-pro-max.png';
@@ -25,10 +23,10 @@ const ProductDetails = () => {
           <p className="lead mt-3">Weight: Weight</p>
           <div className="my-4 d-flex justify-content-start">
             <Link to="/products">
-              <FontAwesomeIcon icon={faHome} size="3x" className="cart-icon mr-4" />
+              <AiOutlineHome size="3em" className="cart-icon mr-4" />
             </Link>
-            <FontAwesomeIcon icon={faHeart} size="3x" className="heart-icon mx-4" />
-            <FontAwesomeIcon icon={faCartPlus} size="3x" className="cart-icon ml-4" />
+            <AiOutlineHeart size="3em" className="heart-icon mx-4" />
+            <IoCartOutline size="3em" className="cart-icon ml-4" />
           </div>
         </Col>
       </Row>
