@@ -7,28 +7,28 @@ import PropTypes from 'prop-types';
 // import img from '../../../../assets/images/products/phones/iphone-12-pro-max.png';
 import './ProductCard.css';
 
-const ProductCard = ({ color, id, image, inStock, inWishList, memory, name, price }) => {
+const ProductCard = ({ product, clickHandler }) => {
   
   const img = require('../../../../assets/images/products/phones/iphone-12-pro-max.png');
 
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={() => clickHandler(product)}>
       <Card border="light">
         <Card.Img variant="top" src={img} alt="product-image" />
         <Card.Body>
           <Card.Title className="text-center">
-            {`${name} ${memory} ${color}`}
+            {`${product?.name} ${product?.memory} ${product?.color}`}
           </Card.Title>
           <Card.Subtitle className="mt-2 text-center text-muted">
-            {`Price: $${price.toFixed(2)}`}
+            {`Price: $${product?.price.toFixed(2)}`}
           </Card.Subtitle>
-          <div className="my-4 d-flex justify-content-around">
-            {inWishList ?
+          <div className="my-4 d-flex justify-content-around" onClick={(e) => {e.stopPropagation()}}>
+            {product?.inWishList ?
               <AiFillHeart size="3em" className="heart-icon" /> :
               <AiOutlineHeart size="3em" className="heart-icon" />}
-            {inStock ?
+            {product?.inStock ?
               <IoCartOutline size="3em" className="cart-icon" /> :
-              <span className="sold-out-label">Sold Out</span>}
+              <div className="sold-out-label">Sold Out</div>}
           </div>
         </Card.Body>
       </Card>

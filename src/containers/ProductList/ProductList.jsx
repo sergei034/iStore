@@ -1,37 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 import AppSpinner from '../../components/AppSpinner';
 import ProductCard from './components/ProductCard';
+import ProductDetailsModal from './components/ProductDetailsModal';
 import { getProductsRequest as getProductsRequestAction } from './actions';
 
 const ProductList = ({ getProductsRequest, loading, products }) => {
 
+  
   useEffect(() => {
     getProductsRequest()
   }, [getProductsRequest]);
+  
+  const [showProductDetailsModal, setShowProductDetailsModal] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState(null);
+
+  const productClickHandler = (product) => {
+    setCurrentProduct(product);
+    setShowProductDetailsModal(true);
+  };
 
   return (
     <Container>
       <Row className="d-flex justify-content-center">
         {loading ? <AppSpinner  /> : (
-          products?.map(({ color, id, image, inStock, inWishList, memory, name, price }) => (
+          products?.map((product) => (
             <ProductCard 
-              color={color}
-              id={id}
-              image={image}
-              inStock={inStock}
-              inWishList={inWishList}
-              key={id}
-              memory={memory}
-              name={name}
-              price={price}
+              key={product.id}
+              product={product}
+              clickHandler={productClickHandler}
             />)
           )
         )}
       </Row>
+      {showProductDetailsModal && 
+        <ProductDetailsModal 
+          product={currentProduct} 
+          showModal={showProductDetailsModal} 
+          setShowModal={setShowProductDetailsModal} 
+        />}
     </Container>
   );
 };
