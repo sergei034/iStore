@@ -26,13 +26,13 @@ const ProductDetailsModal = ({ product, showModal, setShowModal }) => (
             <img src={productImage} alt="product" className="img-fluid" />
           </Col>
           <Col sm={5}>
-            <span className="lead d-block mt-5">Color: {product?.color}</span>
-            <span className="lead d-block">Memory: {product?.memory}</span>
-            <span className="lead d-block">Display: {product?.display}"</span>
-            <span className="lead d-block">Camera: {product?.camera}</span>
-            <span className="lead d-block">Price: ${product?.price?.toFixed(2)}</span>
+            <span className="product-details d-block">Color: {product?.color}</span>
+            <span className="product-details d-block">Memory: {product?.memory}</span>
+            <span className="product-details d-block">Display: {product?.display}"</span>
+            <span className="product-details d-block">Camera: {product?.camera}</span>
+            <span className="product-details d-block">Price: ${product?.price?.toFixed(2)}</span>
             <div className="mb-4">
-              {product?.inWishList ?
+              {product?.inWishlist ?
                 <AiFillHeart size="3em" className="heart-icon mr-5" /> :
                 <AiOutlineHeart size="3em" className="heart-icon mr-5" />}
               {product?.inStock ?
@@ -45,5 +45,7 @@ const ProductDetailsModal = ({ product, showModal, setShowModal }) => (
       </Modal>
   </Container>
 );
+
+// TODO: Add PropTypes
 
 export default ProductDetailsModal;

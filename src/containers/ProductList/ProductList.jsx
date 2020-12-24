@@ -6,9 +6,12 @@ import PropTypes from 'prop-types';
 import AppSpinner from '../../components/AppSpinner';
 import ProductCard from './components/ProductCard';
 import ProductDetailsModal from './components/ProductDetailsModal';
-import { getProductsRequest as getProductsRequestAction } from './actions';
+import { 
+  getProductsRequest as getProductsRequestAction, 
+  putToggleWishlistRequest as putToggleWishlistRequestAction, 
+} from './actions';
 
-const ProductList = ({ getProductsRequest, loading, products }) => {
+const ProductList = ({ loading, products, getProductsRequest, putToggleWishlistRequest }) => {
 
   
   useEffect(() => {
@@ -23,6 +26,13 @@ const ProductList = ({ getProductsRequest, loading, products }) => {
     setShowProductDetailsModal(true);
   };
 
+  const toggleWishListHandler = (product) => {
+    // TODO: needs refactoring
+    // TODO: page refreshing doesn't work!
+    const updatedProduct = { ...product, inWishlist: !product?.inWishlist };
+    putToggleWishlistRequest(product?.id, updatedProduct);
+  };
+
   return (
     <Container>
       <Row className="d-flex justify-content-center">
@@ -32,15 +42,17 @@ const ProductList = ({ getProductsRequest, loading, products }) => {
               key={product.id}
               product={product}
               clickHandler={productClickHandler}
-            />)
-          )
-        )}
+              toggleWishListHandler={toggleWishListHandler}
+              />)
+              )
+              )}
       </Row>
       {showProductDetailsModal && 
         <ProductDetailsModal 
-          product={currentProduct} 
-          showModal={showProductDetailsModal} 
-          setShowModal={setShowProductDetailsModal} 
+        product={currentProduct} 
+        showModal={showProductDetailsModal} 
+        setShowModal={setShowProductDetailsModal} 
+        toggleWishListHandler={toggleWishListHandler}
         />}
     </Container>
   );
@@ -53,6 +65,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   getProductsRequest: getProductsRequestAction,
+  putToggleWishlistRequest: putToggleWishlistRequestAction,
 };
 
 ProductList.propTypes = {
@@ -64,7 +77,7 @@ ProductList.propTypes = {
       category: PropTypes.string,
       subCategory: PropTypes.string,
       inStock: PropTypes.number,
-      inWishList: PropTypes.bool,
+      inWishlist: PropTypes.bool,
       name: PropTypes.string,
       memory: PropTypes.string,
       color: PropTypes.string,
@@ -76,7 +89,9 @@ ProductList.propTypes = {
       size: PropTypes.string,
       weight: PropTypes.string,
     })),
-  ])
+  ]),
+  getProductsRequest: PropTypes.func,
+  putToggleWishlistRequest: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

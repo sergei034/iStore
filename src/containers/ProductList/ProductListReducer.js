@@ -34,6 +34,31 @@ export default (state = initialState, action) => {
         success: false,
       };
     }
+    case constants.PUT_TOGGLE_WISHLIST_REQUEST: {
+      return {
+        ...state,
+        error: null,
+        loading: true,
+        success: false,
+      };
+    }
+    case constants.PUT_TOGGLE_WISHLIST_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        success: true,
+      };
+    }
+    case constants.PUT_TOGGLE_WISHLIST_ERROR: {
+      console.log('error: ', action.payload.error); // TODO: remove
+      return {
+        ...state,
+        error: action.payload.error,
+        loading: false,
+        success: false,
+      };
+    }
     default:
       return state;
   }
