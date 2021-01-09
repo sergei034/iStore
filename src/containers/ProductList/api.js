@@ -5,7 +5,7 @@ export const getProducts = async () => {
   return response;
 };
 
-export const putToggleWishlist = async (productId, value) => {
-  const response = await axios.put(`/products/${productId - 1}.json`, value);
+export const putToggleWishlist = async (productId, updatedProduct) => {
+  const response = await axios.put(`/products/${productId - 1}.json`, updatedProduct);
   return response;
 };

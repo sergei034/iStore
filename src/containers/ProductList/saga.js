@@ -14,10 +14,9 @@ export function* getProductsSaga() {
 
 export function* putToggleToWishlistSaga(data) {
   try {
-    const { productId, value } = data.payload;
-    yield call(putToggleWishlist, productId, value);
-    yield put(actions.putToggleWishlistSuccess());
-    yield put(actions.getProductsRequest());
+    const { productId, updatedProduct } = data.payload;
+    yield call(putToggleWishlist, productId, updatedProduct);
+    yield put(actions.putToggleWishlistSuccess(productId, updatedProduct));
   } catch(error) {
     yield put(actions.putToggleWishlistError(error));
   }

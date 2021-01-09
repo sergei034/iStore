@@ -14,13 +14,14 @@ export const getProductsError = (error) => ({
   payload: { error },
 });
 
-export const putToggleWishlistRequest = (productId, value) => ({
+export const putToggleWishlistRequest = (productId, updatedProduct) => ({
   type: constants.PUT_TOGGLE_WISHLIST_REQUEST,
-  payload: { productId, value },
+  payload: { productId, updatedProduct },
 });
 
-export const putToggleWishlistSuccess = () => ({
+export const putToggleWishlistSuccess = (productId, updatedProduct) => ({
   type: constants.PUT_TOGGLE_WISHLIST_SUCCESS,
+  payload: { productId, updatedProduct },
 });
 
 export const putToggleWishlistError = (error) => ({
