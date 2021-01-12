@@ -6,9 +6,13 @@ import PropTypes from 'prop-types';
 import AppSpinner from '../../components/AppSpinner';
 import ProductCard from './components/ProductCard';
 import ProductDetailsModal from './components/ProductDetailsModal';
-import { getProductsRequest as getProductsRequestAction } from './actions';
+import { 
+  getProductsRequest as getProductsRequestAction, 
+  putToggleWishlistRequest as putToggleWishlistRequestAction, 
+} from './actions';
+import { findProductById } from './ProductList.helpers';
 
-const ProductList = ({ getProductsRequest, loading, products }) => {
+const ProductList = ({ loading, products, getProductsRequest, putToggleWishlistRequest }) => {
 
   
   useEffect(() => {
@@ -16,11 +20,17 @@ const ProductList = ({ getProductsRequest, loading, products }) => {
   }, [getProductsRequest]);
   
   const [showProductDetailsModal, setShowProductDetailsModal] = useState(false);
-  const [currentProduct, setCurrentProduct] = useState(null);
+  const [currentProductId, setCurrentProductId] = useState(null);
 
-  const productClickHandler = (product) => {
-    setCurrentProduct(product);
+  const productClickHandler = (productId) => {
+    setCurrentProductId(productId);
     setShowProductDetailsModal(true);
+  };
+
+  const toggleWishListHandler = (product) => {
+    // TODO: need refactoring
+    const updatedProduct = { ...product, inWishlist: !product?.inWishlist };
+    putToggleWishlistRequest(product?.id, updatedProduct);
   };
 
   return (
@@ -31,16 +41,18 @@ const ProductList = ({ getProductsRequest, loading, products }) => {
             <ProductCard 
               key={product.id}
               product={product}
-              clickHandler={productClickHandler}
-            />)
-          )
-        )}
+              productClickHandler={productClickHandler}
+              toggleWishListHandler={toggleWishListHandler}
+              />)
+              )
+              )}
       </Row>
       {showProductDetailsModal && 
         <ProductDetailsModal 
-          product={currentProduct} 
+          product={findProductById(products, currentProductId)} 
           showModal={showProductDetailsModal} 
           setShowModal={setShowProductDetailsModal} 
+          toggleWishListHandler={toggleWishListHandler}
         />}
     </Container>
   );
@@ -53,6 +65,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   getProductsRequest: getProductsRequestAction,
+  putToggleWishlistRequest: putToggleWishlistRequestAction,
 };
 
 ProductList.propTypes = {
@@ -64,7 +77,7 @@ ProductList.propTypes = {
       category: PropTypes.string,
       subCategory: PropTypes.string,
       inStock: PropTypes.number,
-      inWishList: PropTypes.bool,
+      inWishlist: PropTypes.bool,
       name: PropTypes.string,
       memory: PropTypes.string,
       color: PropTypes.string,
@@ -76,7 +89,9 @@ ProductList.propTypes = {
       size: PropTypes.string,
       weight: PropTypes.string,
     })),
-  ])
+  ]),
+  getProductsRequest: PropTypes.func,
+  putToggleWishlistRequest: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

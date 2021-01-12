@@ -8,7 +8,7 @@ import { Modal } from 'react-bootstrap';
 import productImage from '../../../../assets/images/products/phones/iphone-12-pro-max.png';
 import './ProductDetailsModal.css';
 
-const ProductDetailsModal = ({ product, showModal, setShowModal }) => (
+const ProductDetailsModal = ({ product, showModal, setShowModal, toggleWishListHandler }) => (
   <Container>
     <Modal 
       animation={false} 
@@ -26,15 +26,15 @@ const ProductDetailsModal = ({ product, showModal, setShowModal }) => (
             <img src={productImage} alt="product" className="img-fluid" />
           </Col>
           <Col sm={5}>
-            <span className="lead d-block mt-5">Color: {product?.color}</span>
-            <span className="lead d-block">Memory: {product?.memory}</span>
-            <span className="lead d-block">Display: {product?.display}"</span>
-            <span className="lead d-block">Camera: {product?.camera}</span>
-            <span className="lead d-block">Price: ${product?.price?.toFixed(2)}</span>
+            <span className="product-details d-block">Color: {product?.color}</span>
+            <span className="product-details d-block">Memory: {product?.memory}</span>
+            <span className="product-details d-block">Display: {product?.display}"</span>
+            <span className="product-details d-block">Camera: {product?.camera}</span>
+            <span className="product-details d-block">Price: ${product?.price?.toFixed(2)}</span>
             <div className="mb-4">
-              {product?.inWishList ?
-                <AiFillHeart size="3em" className="heart-icon mr-5" /> :
-                <AiOutlineHeart size="3em" className="heart-icon mr-5" />}
+              {product?.inWishlist ?
+                <AiFillHeart size="3em" className="heart-icon mr-5" onClick={() => toggleWishListHandler(product)}/> :
+                <AiOutlineHeart size="3em" className="heart-icon mr-5" onClick={() => toggleWishListHandler(product)}/>}
               {product?.inStock ?
                 <IoCartOutline size="3em" className="cart-icon" /> :
                 <span className="sold-out-label">Sold Out</span>}
@@ -45,5 +45,7 @@ const ProductDetailsModal = ({ product, showModal, setShowModal }) => (
       </Modal>
   </Container>
 );
+
+// TODO: Add PropTypes
 
 export default ProductDetailsModal;
