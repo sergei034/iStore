@@ -28,7 +28,7 @@ const ProductList = ({ loading, products, getProductsRequest, putToggleWishlistR
   };
 
   const toggleWishListHandler = (product) => {
-    // TODO: needs refactoring
+    // TODO: need refactoring
     const updatedProduct = { ...product, inWishlist: !product?.inWishlist };
     putToggleWishlistRequest(product?.id, updatedProduct);
   };
