@@ -7,12 +7,12 @@ import PropTypes from 'prop-types';
 // import img from '../../../../assets/images/products/phones/iphone-12-pro-max.png';
 import './ProductCard.css';
 
-const ProductCard = ({ product, clickHandler, toggleWishListHandler }) => {
+const ProductCard = ({ product, productClickHandler, toggleWishListHandler }) => {
   
   const img = require('../../../../assets/images/products/phones/iphone-12-pro-max.png');
 
   return (
-    <div className="product-card" onClick={() => clickHandler(product)}>
+    <div className="product-card" onClick={() => productClickHandler(product.id)}>
       <Card border="light">
         <Card.Img variant="top" src={img} alt="product-image" />
         <Card.Body>
@@ -47,7 +47,7 @@ ProductCard.propTypes = {
     memory: PropTypes.string,
     price: PropTypes.number,
   }),
-  clickHandler: PropTypes.func,
+  productClickHandler: PropTypes.func,
   toggleWishListHandler: PropTypes.func,
 };
 

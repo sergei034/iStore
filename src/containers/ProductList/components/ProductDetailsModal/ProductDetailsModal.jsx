@@ -8,7 +8,7 @@ import { Modal } from 'react-bootstrap';
 import productImage from '../../../../assets/images/products/phones/iphone-12-pro-max.png';
 import './ProductDetailsModal.css';
 
-const ProductDetailsModal = ({ product, showModal, setShowModal }) => (
+const ProductDetailsModal = ({ product, showModal, setShowModal, toggleWishListHandler }) => (
   <Container>
     <Modal 
       animation={false} 
@@ -33,8 +33,8 @@ const ProductDetailsModal = ({ product, showModal, setShowModal }) => (
             <span className="product-details d-block">Price: ${product?.price?.toFixed(2)}</span>
             <div className="mb-4">
               {product?.inWishlist ?
-                <AiFillHeart size="3em" className="heart-icon mr-5" /> :
-                <AiOutlineHeart size="3em" className="heart-icon mr-5" />}
+                <AiFillHeart size="3em" className="heart-icon mr-5" onClick={() => toggleWishListHandler(product)}/> :
+                <AiOutlineHeart size="3em" className="heart-icon mr-5" onClick={() => toggleWishListHandler(product)}/>}
               {product?.inStock ?
                 <IoCartOutline size="3em" className="cart-icon" /> :
                 <span className="sold-out-label">Sold Out</span>}

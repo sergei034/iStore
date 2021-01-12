@@ -10,6 +10,7 @@ import {
   getProductsRequest as getProductsRequestAction, 
   putToggleWishlistRequest as putToggleWishlistRequestAction, 
 } from './actions';
+import { findProductById } from './ProductList.helpers';
 
 const ProductList = ({ loading, products, getProductsRequest, putToggleWishlistRequest }) => {
 
@@ -19,10 +20,10 @@ const ProductList = ({ loading, products, getProductsRequest, putToggleWishlistR
   }, [getProductsRequest]);
   
   const [showProductDetailsModal, setShowProductDetailsModal] = useState(false);
-  const [currentProduct, setCurrentProduct] = useState(null);
+  const [currentProductId, setCurrentProductId] = useState(null);
 
-  const productClickHandler = (product) => {
-    setCurrentProduct(product);
+  const productClickHandler = (productId) => {
+    setCurrentProductId(productId);
     setShowProductDetailsModal(true);
   };
 
@@ -40,7 +41,7 @@ const ProductList = ({ loading, products, getProductsRequest, putToggleWishlistR
             <ProductCard 
               key={product.id}
               product={product}
-              clickHandler={productClickHandler}
+              productClickHandler={productClickHandler}
               toggleWishListHandler={toggleWishListHandler}
               />)
               )
@@ -48,10 +49,10 @@ const ProductList = ({ loading, products, getProductsRequest, putToggleWishlistR
       </Row>
       {showProductDetailsModal && 
         <ProductDetailsModal 
-        product={currentProduct} 
-        showModal={showProductDetailsModal} 
-        setShowModal={setShowProductDetailsModal} 
-        toggleWishListHandler={toggleWishListHandler}
+          product={findProductById(products, currentProductId)} 
+          showModal={showProductDetailsModal} 
+          setShowModal={setShowProductDetailsModal} 
+          toggleWishListHandler={toggleWishListHandler}
         />}
     </Container>
   );
