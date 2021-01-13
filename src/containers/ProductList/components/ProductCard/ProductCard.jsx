@@ -1,11 +1,10 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
-import { IoCartOutline, IoCart } from 'react-icons/io5';
 import PropTypes from 'prop-types';
 
-// import img from '../../../../assets/images/products/phones/iphone-12-pro-max.png';
+import ProductCardIcons from '../../../../components/ProductCardIcons';
 import './ProductCard.css';
+// import img from '../../../../assets/images/products/phones/iphone-12-pro-max.png';
 
 const ProductCard = ({ product, productClickHandler, toggleWishListHandler }) => {
   
@@ -17,20 +16,13 @@ const ProductCard = ({ product, productClickHandler, toggleWishListHandler }) =>
         <Card.Img variant="top" src={img} alt="product-image" />
         <Card.Body>
           <Card.Title className="text-center">
-            {`${product?.name} ${product?.memory} ${product?.color}`}
+            {`${product?.name} ${product?.description?.memory} ${product?.description?.color}`}
           </Card.Title>
           <Card.Subtitle className="mt-2 text-center text-muted">
             {`Price: $${product?.price.toFixed(2)}`}
           </Card.Subtitle>
           {/* TODO refactor e.stopPropagation() */}
-          <div className="my-4 d-flex justify-content-around" onClick={(e) => {e.stopPropagation()}}>
-            {product?.inWishlist ?
-              <AiFillHeart size="3em" className="heart-icon" onClick={() => toggleWishListHandler(product)} /> :
-              <AiOutlineHeart size="3em" className="heart-icon" onClick={() => toggleWishListHandler(product)} />}
-            {product?.inStock ?
-              <IoCartOutline size="3em" className="cart-icon" /> :
-              <div className="sold-out-label">Sold Out</div>}
-          </div>
+          <ProductCardIcons product={product} toggleWishListHandler={toggleWishListHandler}/>
         </Card.Body>
       </Card>
     </div>
