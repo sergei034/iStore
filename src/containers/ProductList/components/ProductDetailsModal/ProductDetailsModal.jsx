@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
-import { IoCartOutline, IoCart } from 'react-icons/io5';
 import { Modal } from 'react-bootstrap';
+
+import ProductCardIcons from '../../../../components/ProductCardIcons';
+import { capitalize } from '../../ProductList.helpers';
 
 // TODO: fix product image
 import productImage from '../../../../assets/images/products/phones/iphone-12-pro-max.png';
@@ -21,24 +22,19 @@ const ProductDetailsModal = ({ product, showModal, setShowModal, toggleWishListH
         <Modal.Title className="w-100 text-center">{product?.name}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Row>
-          <Col sm={7}>
+        <Row className="my-5">
+          <Col sm={6}>
             <img src={productImage} alt="product" className="img-fluid" />
           </Col>
-          <Col sm={5}>
-            <span className="product-details d-block">Color: {product?.color}</span>
-            <span className="product-details d-block">Memory: {product?.memory}</span>
-            <span className="product-details d-block">Display: {product?.display}"</span>
-            <span className="product-details d-block">Camera: {product?.camera}</span>
-            <span className="product-details d-block">Price: ${product?.price?.toFixed(2)}</span>
-            <div className="mb-4">
-              {product?.inWishlist ?
-                <AiFillHeart size="3em" className="heart-icon mr-5" onClick={() => toggleWishListHandler(product)}/> :
-                <AiOutlineHeart size="3em" className="heart-icon mr-5" onClick={() => toggleWishListHandler(product)}/>}
-              {product?.inStock ?
-                <IoCartOutline size="3em" className="cart-icon" /> :
-                <span className="sold-out-label">Sold Out</span>}
-            </div>
+          <Col sm={5} className="mr-5">
+            {Object.keys(product?.description).map(descriptionItem => (
+              <span key={descriptionItem} className="product-details d-block ml-5">
+                {capitalize(descriptionItem)}: {product?.description[descriptionItem]}
+              </span>
+            ))}
+            {/* TODO: move price to the description block */}
+            <span className="product-details d-block ml-5">Price: ${product?.price?.toFixed(2)}</span>
+            <ProductCardIcons product={product} toggleWishListHandler={toggleWishListHandler}/>
           </Col>
         </Row>
         </Modal.Body>

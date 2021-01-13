@@ -1,0 +1,18 @@
+.heart-icon:hover, .cart-icon:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.25);
+}
+
+.heart-icon:active, .cart-icon:active {
+  transition: all 0.1s ease-in;
+  transform: scale(1.5);
+}
+
+.sold-out-label {
+  cursor: not-allowed;
+  border: 2px solid #f57575;
+  border-radius: 5px;
+  padding: 0 10px 0 10px;
+  font-size: 16px;
+  color: #f57575;
+}
