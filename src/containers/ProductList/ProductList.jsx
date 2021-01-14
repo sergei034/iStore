@@ -24,7 +24,7 @@ const ProductList = ({
   const [currentProductId, setCurrentProductId] = useState(null);
   const [currentCategory, setCurrentCategory] = useState(null);
 
-  // TODO: maybe currentCategory isn't needed anymore in state. Add pathname to localState and inside useEffect()
+  // TODO: maybe add pathname to localState and move inside useEffect()
   const { category } = useParams();
   const { pathname } = useLocation();
   
@@ -46,7 +46,7 @@ const ProductList = ({
   };
 
   return (
-    <Container>
+    <Container className="my-5">
       <Row className="justify-content-center">
         {loading ? <AppSpinner  /> : (
           filterProductList(products, currentCategory, pathname)
@@ -56,8 +56,7 @@ const ProductList = ({
                 product={product}
                 productClickHandler={productClickHandler}
                 toggleWishListHandler={toggleWishListHandler}
-              />)
-          )
+              />))
         )}
       </Row>
       {showProductDetailsModal && 

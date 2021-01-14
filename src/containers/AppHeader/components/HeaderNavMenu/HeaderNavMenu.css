@@ -1,5 +1,10 @@
-.container > .nav-title {
-  font-size: 22px;
+.main-navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  font-size: 22px !important;
 }
 
 .nav-item {
