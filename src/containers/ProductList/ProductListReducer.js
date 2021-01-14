@@ -1,8 +1,8 @@
 import * as constants from './constants';
 
 const initialState = {
-  // TODO: replace with null
-  currentCategory: null,
+  // TODO: maybe replace with localstate
+  // currentCategory: null,
   error: null,
   loading: true,
   products: null,
@@ -62,12 +62,13 @@ export default (state = initialState, action) => {
         success: false,
       };
     }
-    case constants.SET_CURRENT_CATEGORY: {
-      return {
-        ...state,
-        currentCategory: action.payload.currentCategory,
-      };
-    }
+    // TODO: maybe replace with localstate
+    // case constants.SET_CURRENT_CATEGORY: {
+    //   return {
+    //     ...state,
+    //     currentCategory: action.payload.currentCategory,
+    //   };
+    // }
     default:
       return state;
   }

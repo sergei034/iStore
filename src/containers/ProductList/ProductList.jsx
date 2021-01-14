@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 
 import AppSpinner from '../../components/AppSpinner';
 import ProductCard from './components/ProductCard';
@@ -10,28 +10,31 @@ import ProductDetailsModal from './components/ProductDetailsModal';
 import { 
   getProductsRequest as getProductsRequestAction, 
   putToggleWishlistRequest as putToggleWishlistRequestAction, 
-  setCurrentCategory as setCurrentCategoryAction, 
+  // setCurrentCategory as setCurrentCategoryAction, 
 } from './actions';
-import { findProductById } from './ProductList.helpers';
+import { filterProductList, findProductById } from './ProductList.helpers';
 
 const ProductList = ({ 
-  currentCategory, 
+  // currentCategory, 
   loading, 
   products, 
   getProductsRequest, 
   putToggleWishlistRequest, 
-  setCurrentCategory 
+  // setCurrentCategory 
 }) => {
 
-  const { category } = useParams();
-  
-  useEffect(() => {
-    setCurrentCategory(category)
-    getProductsRequest(currentCategory)
-  }, [getProductsRequest, setCurrentCategory, category, currentCategory]);
-  
   const [showProductDetailsModal, setShowProductDetailsModal] = useState(false);
   const [currentProductId, setCurrentProductId] = useState(null);
+  const [currentCategory, setCurrentCategory] = useState(null);
+
+  // TODO: maybe currentCategory isn't needed anymore in state. Add pathname to localState and inside useEffect()
+  const { category } = useParams();
+  const { pathname } = useLocation();
+  
+  useEffect(() => {
+    setCurrentCategory(category);
+    getProductsRequest(currentCategory);
+  }, [getProductsRequest, setCurrentCategory, category, currentCategory]);
 
   const productClickHandler = (productId) => {
     setCurrentProductId(productId);
@@ -42,22 +45,23 @@ const ProductList = ({
     // TODO: need refactoring (stopPropagation)
     e.stopPropagation();
     const updatedProduct = { ...product, inWishlist: !product?.inWishlist };
-    putToggleWishlistRequest(currentCategory, product?.id, updatedProduct);
+    putToggleWishlistRequest(product?.id, updatedProduct);
   };
 
   return (
     <Container>
-      <Row className="d-flex justify-content-center">
+      <Row className="justify-content-center">
         {loading ? <AppSpinner  /> : (
-          products?.map((product) => (
-            <ProductCard 
-              key={product.id}
-              product={product}
-              productClickHandler={productClickHandler}
-              toggleWishListHandler={toggleWishListHandler}
+          filterProductList(products, currentCategory, pathname)
+            ?.map((product) => (
+              <ProductCard 
+                key={product.id}
+                product={product}
+                productClickHandler={productClickHandler}
+                toggleWishListHandler={toggleWishListHandler}
               />)
-              )
-              )}
+          )
+        )}
       </Row>
       {showProductDetailsModal && 
         <ProductDetailsModal 
@@ -71,7 +75,7 @@ const ProductList = ({
 };
 
 const mapStateToProps = (state) => ({
-  currentCategory: state.products.currentCategory,
+  // currentCategory: state.products.currentCategory,
   loading: state.products.loading,
   products: state.products.products,
 });
@@ -79,7 +83,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   getProductsRequest: getProductsRequestAction,
   putToggleWishlistRequest: putToggleWishlistRequestAction,
-  setCurrentCategory: setCurrentCategoryAction,
 };
 
 ProductList.propTypes = {

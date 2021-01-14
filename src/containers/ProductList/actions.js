@@ -1,8 +1,7 @@
 import * as constants from './constants';
 
-export const getProductsRequest = (currentCategory) => ({
+export const getProductsRequest = () => ({
   type: constants.GET_PRODUCTS_REQUEST,
-  payload: { currentCategory },
 });
 
 export const getProductsSuccess = (products) => ({
@@ -15,9 +14,9 @@ export const getProductsError = (error) => ({
   payload: { error },
 });
 
-export const putToggleWishlistRequest = (currentCategory, productId, updatedProduct) => ({
+export const putToggleWishlistRequest = (productId, updatedProduct) => ({
   type: constants.PUT_TOGGLE_WISHLIST_REQUEST,
-  payload: { currentCategory, productId, updatedProduct },
+  payload: { productId, updatedProduct },
 });
 
 export const putToggleWishlistSuccess = (productId, updatedProduct) => ({
