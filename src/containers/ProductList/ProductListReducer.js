@@ -1,8 +1,6 @@
 import * as constants from './constants';
 
 const initialState = {
-  // TODO: replace with null
-  currentCategory: null,
   error: null,
   loading: true,
   products: null,
@@ -60,12 +58,6 @@ export default (state = initialState, action) => {
         error: action.payload.error,
         loading: false,
         success: false,
-      };
-    }
-    case constants.SET_CURRENT_CATEGORY: {
-      return {
-        ...state,
-        currentCategory: action.payload.currentCategory,
       };
     }
     default:
