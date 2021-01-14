@@ -10,17 +10,14 @@ import ProductDetailsModal from './components/ProductDetailsModal';
 import { 
   getProductsRequest as getProductsRequestAction, 
   putToggleWishlistRequest as putToggleWishlistRequestAction, 
-  // setCurrentCategory as setCurrentCategoryAction, 
 } from './actions';
 import { filterProductList, findProductById } from './ProductList.helpers';
 
-const ProductList = ({ 
-  // currentCategory, 
+const ProductList = ({  
   loading, 
   products, 
   getProductsRequest, 
   putToggleWishlistRequest, 
-  // setCurrentCategory 
 }) => {
 
   const [showProductDetailsModal, setShowProductDetailsModal] = useState(false);
@@ -75,7 +72,6 @@ const ProductList = ({
 };
 
 const mapStateToProps = (state) => ({
-  // currentCategory: state.products.currentCategory,
   loading: state.products.loading,
   products: state.products.products,
 });
