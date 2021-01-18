@@ -86,12 +86,12 @@ const mapDispatchToProps = {
   putToggleWishlistRequest: putToggleWishlistRequestAction,
 };
 
-// TODO: check all the proptypes
 ProductList.propTypes = {
   loading: PropTypes.bool.isRequired,
   products: PropTypes.oneOfType([
     PropTypes.oneOf([null]),
-    PropTypes.arrayOf(PropTypes.shape({
+    PropTypes.arrayOf(
+      PropTypes.shape({
       id: PropTypes.number,
       category: PropTypes.string,
       subCategory: PropTypes.string,
@@ -108,8 +108,12 @@ ProductList.propTypes = {
       }),
     })),
   ]),
-  getProductsRequest: PropTypes.func,
-  putToggleWishlistRequest: PropTypes.func,
+  getProductsRequest: PropTypes.func.isRequired,
+  putToggleWishlistRequest: PropTypes.func.isRequired,
+};
+
+ProductList.defaultProps = {
+  products: null,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

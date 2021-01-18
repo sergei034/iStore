@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { IoCartOutline, IoCart } from 'react-icons/io5';
 
@@ -14,5 +15,25 @@ const ProductCardIcons = ({ product, toggleWishListHandler }) => (
       <div className="sold-out-label mr-5">Sold Out</div>}
   </div>
 );
+
+ProductCardIcons.propTypes = {
+  product: PropTypes.shape({
+      id: PropTypes.number,
+      category: PropTypes.string,
+      subCategory: PropTypes.string,
+      inStock: PropTypes.number,
+      inWishlist: PropTypes.bool,
+      name: PropTypes.string,
+      price: PropTypes.number,
+      image: PropTypes.string,
+      description: PropTypes.shape({
+        color: PropTypes.string,
+        cpu: PropTypes.string,
+        display: PropTypes.string,
+        memory: PropTypes.string,
+      }),
+    }).isRequired,
+  toggleWishListHandler: PropTypes.func.isRequired,
+};
 
 export default ProductCardIcons;

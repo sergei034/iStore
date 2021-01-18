@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './NoContentMessage.css';
 
@@ -7,5 +8,13 @@ const NoContentMessage = ({ message }) => (
     {message}
   </div>
 );
+
+NoContentMessage.propTypes = {
+  message: PropTypes.string,
+};
+
+NoContentMessage.defaultProps = {
+  message: 'Ups! Nothing to show...',
+};
 
 export default NoContentMessage;

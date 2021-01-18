@@ -31,16 +31,16 @@ const ProductCard = ({ product, productClickHandler, toggleWishListHandler }) =>
 
 ProductCard.propTypes = {
   product: PropTypes.shape({
-    color: PropTypes.string,
-    id: PropTypes.number,
-    image: PropTypes.string,
-    inStock: PropTypes.number,
-    name: PropTypes.string,
-    memory: PropTypes.string,
-    price: PropTypes.number,
-  }),
-  productClickHandler: PropTypes.func,
-  toggleWishListHandler: PropTypes.func,
+      color: PropTypes.string,
+      id: PropTypes.number,
+      image: PropTypes.string,
+      inStock: PropTypes.number,
+      name: PropTypes.string,
+      memory: PropTypes.string,
+      price: PropTypes.number,
+    }).isRequired,
+  productClickHandler: PropTypes.func.isRequired,
+  toggleWishListHandler: PropTypes.func.isRequired,
 };
 
 export default ProductCard;
