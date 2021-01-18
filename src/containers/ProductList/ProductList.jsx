@@ -7,6 +7,7 @@ import { useLocation, useParams } from 'react-router';
 import AppSpinner from '../../components/AppSpinner';
 import ProductCard from './components/ProductCard';
 import ProductDetailsModal from './components/ProductDetailsModal';
+import NoContentMessage from '../../components/NoContentMessage';
 import { 
   getProductsRequest as getProductsRequestAction, 
   putToggleWishlistRequest as putToggleWishlistRequestAction, 
@@ -45,19 +46,24 @@ const ProductList = ({
     putToggleWishlistRequest(product?.id, updatedProduct);
   };
 
+  const getContentForRender = (products, currentCategory, pathname) => {
+    const filteredProducts = filterProductList(products, currentCategory, pathname);
+    return filteredProducts?.length ? 
+      filteredProducts.map((product) => (
+        <ProductCard 
+          key={product.id}
+          product={product}
+          productClickHandler={productClickHandler}
+          toggleWishListHandler={toggleWishListHandler}
+        />)) :
+        // TODO: use constants for the content
+      <NoContentMessage message="No products to show..." />
+  };
+
   return (
     <Container className="my-5">
       <Row className="justify-content-center">
-        {loading ? <AppSpinner  /> : (
-          filterProductList(products, currentCategory, pathname)
-            ?.map((product) => (
-              <ProductCard 
-                key={product.id}
-                product={product}
-                productClickHandler={productClickHandler}
-                toggleWishListHandler={toggleWishListHandler}
-              />))
-        )}
+        {loading ? <AppSpinner  /> : getContentForRender(products, currentCategory, pathname)}
       </Row>
       {showProductDetailsModal && 
         <ProductDetailsModal 
@@ -80,6 +86,7 @@ const mapDispatchToProps = {
   putToggleWishlistRequest: putToggleWishlistRequestAction,
 };
 
+// TODO: check all the proptypes
 ProductList.propTypes = {
   loading: PropTypes.bool.isRequired,
   products: PropTypes.oneOfType([
