@@ -13,6 +13,7 @@ import {
   putToggleWishlistRequest as putToggleWishlistRequestAction, 
 } from './actions';
 import { filterProductList, findProductById } from './ProductList.helpers';
+import { NO_PRODUCTS_MESSAGE } from './constants';
 
 const ProductList = ({  
   loading, 
@@ -56,8 +57,7 @@ const ProductList = ({
           productClickHandler={productClickHandler}
           toggleWishListHandler={toggleWishListHandler}
         />)) :
-        // TODO: use constants for the content
-      <NoContentMessage message="No products to show..." />
+      <NoContentMessage message={NO_PRODUCTS_MESSAGE} />
   };
 
   return (
