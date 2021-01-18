@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 import ProductCardIcons from '../../../../components/ProductCardIcons';
 import { capitalize } from '../../ProductList.helpers';
@@ -42,6 +43,26 @@ const ProductDetailsModal = ({ product, showModal, setShowModal, toggleWishListH
   </Container>
 );
 
-// TODO: Add PropTypes
+ProductDetailsModal.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number,
+    category: PropTypes.string,
+    subCategory: PropTypes.string,
+    inStock: PropTypes.number,
+    inWishlist: PropTypes.bool,
+    name: PropTypes.string,
+    price: PropTypes.number,
+    image: PropTypes.string,
+    description: PropTypes.shape({
+      color: PropTypes.string,
+      cpu: PropTypes.string,
+      display: PropTypes.string,
+      memory: PropTypes.string,
+    }),
+  }).isRequired,
+  showModal: PropTypes.bool.isRequired,
+  setShowModal: PropTypes.func.isRequired,
+  toggleWishListHandler: PropTypes.func.isRequired,
+};
 
 export default ProductDetailsModal;
