@@ -4,16 +4,13 @@ import PropTypes from 'prop-types';
 
 import ProductCardIcons from '../../../../components/ProductCardIcons';
 import './ProductCard.css';
-// import img from '../../../../assets/images/products/phones/iphone-12-pro-max.png';
 
 const ProductCard = ({ product, productClickHandler, toggleWishListHandler }) => {
-  
-  const img = require('../../../../assets/images/products/phones/iphone-12-pro-max.png');
 
   return (
     <div className="product-card" onClick={() => productClickHandler(product.id)}>
       <Card border="light">
-        <Card.Img variant="top" src={img} alt="product-image" />
+        <Card.Img variant="top" src={product?.image} alt="product-image" className="pt-5" />
         <Card.Body>
           <Card.Title className="text-center">
             {`${product?.name} ${product?.description?.memory} ${product?.description?.color}`}
