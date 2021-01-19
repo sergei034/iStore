@@ -5,11 +5,19 @@
 /.pnp
 .pnp.js
 
+
 # testing
 /coverage
 
 # production
 /build
+
+# mocks
+/src/__mocks__
+
+# product images
+/assets/images/homepage
+/assets/images/products
 
 # misc
 .DS_Store
