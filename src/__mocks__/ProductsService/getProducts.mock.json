@@ -6,17 +6,17 @@
         "id": 1,
         "category": "apple-watch",
         "subCategory": "series-4",
-        "inStock": 2,
+        "inStock": 0,
         "inWishlist": false,
         "name": "Apple Watch Series 4 40 mm",
         "price": 229,
         "description": {
-          "color": "Black",
+          "color": "Space Grey",
           "cpu": "Apple S4",
           "display": "40 mm",
           "memory": "16Gb"
         },
-        "image": "../../assets/images/products/apple-watch/series-4.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fapple-watch%2Fapple-watch-series-4-space-grey2.jpg?alt=media&token=9c05bd53-9548-4d2d-8f71-e92319adb0ef"
       },
       {
         "id": 2,
@@ -27,12 +27,12 @@
         "name": "Apple Watch Series 4 44 mm",
         "price": 249,
         "description": {
-          "color": "Black",
+          "color": "Space Grey",
           "cpu": "Apple S4",
           "display": "44 mm",
           "memory": "16Gb"
         },
-        "image": "../../assets/images/products/apple-watch/series-4.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fapple-watch%2Fapple-watch-series-4-space-grey2.jpg?alt=media&token=9c05bd53-9548-4d2d-8f71-e92319adb0ef"
       },
       {
         "id": 3,
@@ -43,12 +43,12 @@
         "name": "Apple Watch Series 5 40 mm",
         "price": 249,
         "description": {
-          "color": "Black",
+          "color": "Space Grey",
           "cpu": "Apple S5",
           "display": "40 mm",
           "memory": "32Gb"
         },
-        "image": "../../assets/images/products/apple-watch/series-5.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fapple-watch%2Fapple-watch-series-5-space-grey2.jpg?alt=media&token=cbe419a5-355c-4f5b-bf2f-980e69769edb"
       },
       {
         "id": 4,
@@ -59,12 +59,12 @@
         "name": "Apple Watch Series 5 44 mm",
         "price": 279,
         "description": {
-          "color": "Black",
+          "color": "Space Grey",
           "cpu": "Apple S5",
           "display": "44 mm",
           "memory": "32Gb"
         },
-        "image": "../../assets/images/products/apple-watch/series-5.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fapple-watch%2Fapple-watch-series-5-space-grey2.jpg?alt=media&token=cbe419a5-355c-4f5b-bf2f-980e69769edb"
       },
       {
         "id": 5,
@@ -75,12 +75,12 @@
         "name": "Apple Watch SE 40 mm",
         "price": 299,
         "description": {
-          "color": "Black",
+          "color": "Space Grey",
           "cpu": "Apple S5",
           "display": "40 mm",
           "memory": "32Gb"
         },
-        "image": "../../assets/images/products/apple-watch/se.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fapple-watch%2Fapple-watch-se-space-grey2.jpg?alt=media&token=52611e02-e9b7-4aa1-b89d-e0866ca22853"
       },
       {
         "id": 6,
@@ -91,12 +91,12 @@
         "name": "Apple Watch SE 44 mm",
         "price": 329,
         "description": {
-          "color": "Black",
+          "color": "Space Grey",
           "cpu": "Apple S5",
           "display": "44 mm",
           "memory": "32Gb"
         },
-        "image": "../../assets/images/products/apple-watch/se.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fapple-watch%2Fapple-watch-se-space-grey2.jpg?alt=media&token=52611e02-e9b7-4aa1-b89d-e0866ca22853"
       },
       {
         "id": 7,
@@ -107,12 +107,12 @@
         "name": "Apple Watch Series 6 40 mm",
         "price": 349,
         "description": {
-          "color": "Black",
+          "color": "Space Grey",
           "cpu": "Apple S6",
           "display": "40 mm",
           "memory": "32Gb"
         },
-        "image": "../../assets/images/products/apple-watch/series-6.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fapple-watch%2Fapple-watch-series-6-space-grey2.jpg?alt=media&token=690fc094-9305-47fd-a4b4-482e9c7318fb"
       },
       {
         "id": 8,
@@ -123,12 +123,12 @@
         "name": "Apple Watch Series 6 44 mm",
         "price": 399,
         "description": {
-          "color": "Black",
+          "color": "Space Grey",
           "cpu": "Apple S6",
           "display": "44 mm",
           "memory": "32Gb"
         },
-        "image": "../../assets/images/products/apple-watch/series-6.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fapple-watch%2Fapple-watch-series-6-space-grey2.jpg?alt=media&token=690fc094-9305-47fd-a4b4-482e9c7318fb"
       },
       {
         "id": 9,
@@ -144,14 +144,14 @@
           "display": "10.9 inches",
           "memory": "64Gb"
         },
-        "image": "../../assets/images/products/ipad/air-4.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fipad%2Fipad-air-4-space-grey.jpg?alt=media&token=8c28033d-e511-4317-a66d-7eab637dda60"
       },
       {
         "id": 10,
         "category": "ipad",
         "subCategory": "air-4",
-        "inStock": 2,
-        "inWishlist": false,
+        "inStock": 0,
+        "inWishlist": true,
         "name": "iPad Air 4 Wi-Fi + 4G",
         "price": 729,
         "description": {
@@ -160,7 +160,7 @@
           "display": "10.9 inches",
           "memory": "256Gb"
         },
-        "image": "../../assets/images/products/ipad/air-4.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fipad%2Fipad-air-4-space-grey.jpg?alt=media&token=8c28033d-e511-4317-a66d-7eab637dda60"
       },
       {
         "id": 11,
@@ -176,7 +176,7 @@
           "display": "11 inches",
           "memory": "128Gb"
         },
-        "image": "../../assets/images/products/ipad/pro.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fipad%2Fipad-pro-11-space-grey.jpg?alt=media&token=73b96a5b-987e-47b0-b583-7fb9ac225b04"
       },
       {
         "id": 12,
@@ -192,7 +192,7 @@
           "display": "12.9 inches",
           "memory": "512Gb"
         },
-        "image": "../../assets/images/products/ipad/pro.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fipad%2Fipad-pro-12.9-space-grey.jpg?alt=media&token=f7d8a62e-2ef7-4d03-b664-9d6c5fd6fd47"
       },
       {
         "id": 13,
@@ -208,7 +208,7 @@
           "display": "7.9 inches",
           "memory": "128Gb"
         },
-        "image": "../../assets/images/products/ipad/mini-5.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fipad%2Fipad-mini-5-space-grey.jpg?alt=media&token=f44497d0-e713-442b-aba8-ec6b6f601bf6"
       },
       {
         "id": 14,
@@ -224,17 +224,17 @@
           "display": "7.9 inches",
           "memory": "256Gb"
         },
-        "image": "../../assets/images/products/ipad/mini-5.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fipad%2Fipad-mini-5-space-grey.jpg?alt=media&token=f44497d0-e713-442b-aba8-ec6b6f601bf6"
       },
       {
         "id": 15,
         "category": "iphone",
         "subCategory": "12",
-        "inStock": 2,
+        "inStock": 0,
         "inWishlist": false,
         "name": "iPhone 12",
         "price": 699,
-        "image": "../../assets/images/products/phones/iphone-12.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-space-grey.jpg?alt=media&token=7dc09bc4-ad9b-41da-8564-edb9cbb33d86",
         "description": {
           "color": "Black",
           "cpu": "Apple A14 Bionic",
@@ -250,6 +250,7 @@
         "inWishlist": false,
         "name": "iPhone 12",
         "price": 799,
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-space-grey.jpg?alt=media&token=7dc09bc4-ad9b-41da-8564-edb9cbb33d86",
         "description": {
           "color": "Black",
           "cpu": "Apple A14 Bionic",
@@ -265,7 +266,7 @@
         "inWishlist": false,
         "name": "iPhone 12",
         "price": 899,
-        "image": "../../assets/images/products/phones/iphone-12.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-space-grey.jpg?alt=media&token=7dc09bc4-ad9b-41da-8564-edb9cbb33d86",
         "description": {
           "color": "Black",
           "cpu": "Apple A14 Bionic",
@@ -281,7 +282,7 @@
         "inWishlist": false,
         "name": "iPhone 12 mini",
         "price": 799,
-        "image": "../../assets/images/products/phones/iphone-12-mini.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-mini-space-grey.jpg?alt=media&token=02100881-b2e4-47a6-9c73-295ef0c8281b",
         "description": {
           "color": "Black",
           "cpu": "Apple A14 Bionic",
@@ -297,7 +298,7 @@
         "inWishlist": false,
         "name": "iPhone 12 mini",
         "price": 899,
-        "image": "../../assets/images/products/phones/iphone-12-mini.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-mini-space-grey.jpg?alt=media&token=02100881-b2e4-47a6-9c73-295ef0c8281b",
         "description": {
           "color": "Black",
           "cpu": "Apple A14 Bionic",
@@ -313,7 +314,7 @@
         "inWishlist": false,
         "name": "iPhone 12 mini",
         "price": 999,
-        "image": "../../assets/images/products/phones/iphone-12-mini.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-mini-space-grey.jpg?alt=media&token=02100881-b2e4-47a6-9c73-295ef0c8281b",
         "description": {
           "color": "Black",
           "cpu": "Apple A14 Bionic",
@@ -329,7 +330,7 @@
         "inWishlist": false,
         "name": "iPhone 12 Pro",
         "price": 999,
-        "image": "../../assets/images/products/phones/iphone-12-pro.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-pro-space-grey.jpg?alt=media&token=70918706-5a0f-4903-8807-fed5baf4a1ac",
         "description": {
           "color": "Graphite",
           "cpu": "Apple A14 Bionic",
@@ -345,7 +346,7 @@
         "inWishlist": false,
         "name": "iPhone 12 Pro",
         "price": 1099,
-        "image": "../../assets/images/products/phones/iphone-12-pro.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-pro-space-grey.jpg?alt=media&token=70918706-5a0f-4903-8807-fed5baf4a1ac",
         "description": {
           "color": "Graphite",
           "cpu": "Apple A14 Bionic",
@@ -361,7 +362,7 @@
         "inWishlist": false,
         "name": "iPhone 12 Pro",
         "price": 1199,
-        "image": "../../assets/images/products/phones/iphone-12-pro.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-pro-space-grey.jpg?alt=media&token=70918706-5a0f-4903-8807-fed5baf4a1ac",
         "description": {
           "color": "Graphite",
           "cpu": "Apple A14 Bionic",
@@ -377,7 +378,7 @@
         "inWishlist": false,
         "name": "iPhone 12 Pro",
         "price": 1099,
-        "image": "../../assets/images/products/phones/iphone-12-pro-max.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-pro-max-space-grey.jpg?alt=media&token=b8232e77-d587-4068-bcce-0202cd03fb9d",
         "description": {
           "color": "Graphite",
           "cpu": "Apple A14 Bionic",
@@ -393,7 +394,7 @@
         "inWishlist": false,
         "name": "iPhone 12 Pro",
         "price": 1199,
-        "image": "../../assets/images/products/phones/iphone-12-pro-max.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-pro-max-space-grey.jpg?alt=media&token=b8232e77-d587-4068-bcce-0202cd03fb9d",
         "description": {
           "color": "Graphite",
           "cpu": "Apple A14 Bionic",
@@ -409,7 +410,7 @@
         "inWishlist": false,
         "name": "iPhone 12 Pro",
         "price": 1299,
-        "image": "../../assets/images/products/phones/iphone-12-pro-max.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-pro-max-space-grey.jpg?alt=media&token=b8232e77-d587-4068-bcce-0202cd03fb9d",
         "description": {
           "color": "Graphite",
           "cpu": "Apple A14 Bionic",
@@ -431,13 +432,13 @@
           "display": "13.3 inches",
           "memory": "256Gb"
         },
-        "image": "../../assets/images/products/mac/macbook-air.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fmacbook-air-space-grey2.jpg?alt=media&token=471c487e-29c6-4978-b6c0-b228576464e6"
       },
       {
         "id": 28,
         "category": "mac",
         "subCategory": "macbook-air",
-        "inStock": 2,
+        "inStock": 0,
         "inWishlist": false,
         "name": "Macbook Air M1",
         "price": 1249,
@@ -447,7 +448,7 @@
           "display": "13.3 inches",
           "memory": "512Gb"
         },
-        "image": "../../assets/images/products/mac/macbook-air.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fmacbook-air-space-grey2.jpg?alt=media&token=471c487e-29c6-4978-b6c0-b228576464e6"
       },
       {
         "id": 29,
@@ -463,7 +464,7 @@
           "display": "13.3 inches",
           "memory": "256Gb"
         },
-        "image": "../../assets/images/products/mac/macbook-pro.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fmacbook-pro-m1-space-grey2.jpg?alt=media&token=be581867-f858-48d1-b447-7937f2fbc5a4"
       },
       {
         "id": 30,
@@ -479,7 +480,7 @@
           "display": "13.3 inches",
           "memory": "512Gb"
         },
-        "image": "../../assets/images/products/mac/macbook-pro.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fmacbook-pro-m1-space-grey2.jpg?alt=media&token=be581867-f858-48d1-b447-7937f2fbc5a4"
       },
       {
         "id": 31,
@@ -495,7 +496,7 @@
           "display": "16 inches",
           "memory": "256Gb"
         },
-        "image": "../../assets/images/products/mac/macbook-pro.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fmacbook-pro-16-space-grey2.jpg?alt=media&token=3fe55b70-67b7-4d7b-8727-c3b6b0dce785"
       },
       {
         "id": 32,
@@ -511,7 +512,7 @@
           "display": "16 inches",
           "memory": "1Tb"
         },
-        "image": "../../assets/images/products/mac/macbook-pro.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fmacbook-pro-16-space-grey2.jpg?alt=media&token=3fe55b70-67b7-4d7b-8727-c3b6b0dce785"
       },
       {
         "id": 33,
@@ -522,12 +523,12 @@
         "name": "iMac",
         "price": 1099,
         "description": {
+          "color": "Silver",
           "cpu": "Intel Core i5",
           "display": "21.5 inches",
-          "memory": "256Gb",
-          "graphics": "Intel Iris Plus Graphics 640"
+          "memory": "256Gb"
         },
-        "image": "../../assets/images/products/mac/imac.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fimac-27.jpg?alt=media&token=5b15aa37-74fe-4233-aa25-e3398eb60e18"
       },
       {
         "id": 34,
@@ -538,12 +539,12 @@
         "name": "iMac",
         "price": 2299,
         "description": {
+          "color": "Silver",
           "cpu": "Intel Core i7",
           "display": "27 inches",
-          "memory": "512Gb",
-          "graphics": "Radeon Pro 560X"
+          "memory": "512Gb"
         },
-        "image": "../../assets/images/products/mac/imac.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fimac-27.jpg?alt=media&token=5b15aa37-74fe-4233-aa25-e3398eb60e18"
       },
       {
         "id": 35,
@@ -554,12 +555,12 @@
         "name": "iMac Pro",
         "price": 4999,
         "description": {
+          "color": "Space Grey",
           "cpu": "Intel Xeon W",
           "display": "27 inches",
-          "memory": "1Tb",
-          "graphics": "Radeon Pro Vega 56"
+          "memory": "1Tb"
         },
-        "image": "../../assets/images/products/mac/mac-pro.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fimac-pro-space-grey.jpg?alt=media&token=534eac56-5e96-416a-ac5f-351abfa7bdb9"
       },
       {
         "id": 36,
@@ -575,7 +576,7 @@
           "memory": "256Gb",
           "graphics": "Intergated (M1)"
         },
-        "image": "../../assets/images/products/mac/mac-mini.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fmac-mini-silver.jpg?alt=media&token=d2a96b46-592e-412c-8879-dce0f9749ab1"
       },
       {
         "id": 37,
@@ -591,606 +592,7 @@
           "memory": "512Gb",
           "graphics": "Intergated (M1)"
         },
-        "image": "../../assets/images/products/mac/mac-mini.png"
-      }
-    ],
-    "apple-watch": [
-      {
-        "id": 1,
-        "category": "apple-watch",
-        "subCategory": "series-4",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Apple Watch Series 4 40 mm",
-        "price": 229,
-        "description": {
-          "color": "Black",
-          "cpu": "Apple S4",
-          "display": "40 mm",
-          "memory": "16Gb"
-        },
-        "image": "../../assets/images/products/apple-watch/series-4.png"
-      },
-      {
-        "id": 2,
-        "category": "apple-watch",
-        "subCategory": "series-4",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Apple Watch Series 4 44 mm",
-        "price": 249,
-        "description": {
-          "color": "Black",
-          "cpu": "Apple S4",
-          "display": "44 mm",
-          "memory": "16Gb"
-        },
-        "image": "../../assets/images/products/apple-watch/series-4.png"
-      },
-      {
-        "id": 3,
-        "category": "apple-watch",
-        "subCategory": "series-5",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Apple Watch Series 5 40 mm",
-        "price": 249,
-        "description": {
-          "color": "Black",
-          "cpu": "Apple S5",
-          "display": "40 mm",
-          "memory": "32Gb"
-        },
-        "image": "../../assets/images/products/apple-watch/series-5.png"
-      },
-      {
-        "id": 4,
-        "category": "apple-watch",
-        "subCategory": "series-5",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Apple Watch Series 5 44 mm",
-        "price": 279,
-        "description": {
-          "color": "Black",
-          "cpu": "Apple S5",
-          "display": "44 mm",
-          "memory": "32Gb"
-        },
-        "image": "../../assets/images/products/apple-watch/series-5.png"
-      },
-      {
-        "id": 5,
-        "category": "apple-watch",
-        "subCategory": "se",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Apple Watch SE 40 mm",
-        "price": 299,
-        "description": {
-          "color": "Black",
-          "cpu": "Apple S5",
-          "display": "40 mm",
-          "memory": "32Gb"
-        },
-        "image": "../../assets/images/products/apple-watch/se.png"
-      },
-      {
-        "id": 6,
-        "category": "apple-watch",
-        "subCategory": "se",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Apple Watch SE 44 mm",
-        "price": 329,
-        "description": {
-          "color": "Black",
-          "cpu": "Apple S5",
-          "display": "44 mm",
-          "memory": "32Gb"
-        },
-        "image": "../../assets/images/products/apple-watch/se.png"
-      },
-      {
-        "id": 7,
-        "category": "apple-watch",
-        "subCategory": "series-6",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Apple Watch Series 6 40 mm",
-        "price": 349,
-        "description": {
-          "color": "Black",
-          "cpu": "Apple S6",
-          "display": "40 mm",
-          "memory": "32Gb"
-        },
-        "image": "../../assets/images/products/apple-watch/series-6.png"
-      },
-      {
-        "id": 8,
-        "category": "apple-watch",
-        "subCategory": "series-6",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Apple Watch Series 6 44 mm",
-        "price": 399,
-        "description": {
-          "color": "Black",
-          "cpu": "Apple S6",
-          "display": "44 mm",
-          "memory": "32Gb"
-        },
-        "image": "../../assets/images/products/apple-watch/series-6.png"
-      }
-    ],
-    "ipad": [
-      {
-        "id": 1,
-        "category": "ipad",
-        "subCategory": "air-4",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPad Air 4 Wi-Fi",
-        "price": 599,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Apple A14 Bionic",
-          "display": "10.9 inches",
-          "memory": "64Gb"
-        },
-        "image": "../../assets/images/products/ipad/air-4.png"
-      },
-      {
-        "id": 2,
-        "category": "ipad",
-        "subCategory": "air-4",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPad Air 4 Wi-Fi + 4G",
-        "price": 729,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Apple A14 Bionic",
-          "display": "10.9 inches",
-          "memory": "256Gb"
-        },
-        "image": "../../assets/images/products/ipad/air-4.png"
-      },
-      {
-        "id": 3,
-        "category": "ipad",
-        "subCategory": "pro",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPad Pro Wi-Fi",
-        "price": 799,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Apple A12Z Bionic",
-          "display": "11 inches",
-          "memory": "128Gb"
-        },
-        "image": "../../assets/images/products/ipad/pro.png"
-      },
-      {
-        "id": 4,
-        "category": "ipad",
-        "subCategory": "pro",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPad Pro Wi-Fi + 4G",
-        "price": 1249,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Apple A12Z Bionic",
-          "display": "12.9 inches",
-          "memory": "512Gb"
-        },
-        "image": "../../assets/images/products/ipad/pro.png"
-      },
-      {
-        "id": 5,
-        "category": "ipad",
-        "subCategory": "mini-5",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPad Mini 5 Wi-Fi",
-        "price": 399,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Apple A12 Bionic",
-          "display": "7.9 inches",
-          "memory": "128Gb"
-        },
-        "image": "../../assets/images/products/ipad/mini-5.png"
-      },
-      {
-        "id": 6,
-        "category": "ipad",
-        "subCategory": "mini-5",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPad Mini 5 Wi-Fi + 4G",
-        "price": 679,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Apple A12 Bionic",
-          "display": "7.9 inches",
-          "memory": "256Gb"
-        },
-        "image": "../../assets/images/products/ipad/mini-5.png"
-      }
-    ],
-    "iphone": [
-      {
-        "id": 1,
-        "category": "iphone",
-        "subCategory": "12",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12",
-        "price": 699,
-        "image": "../../assets/images/products/phones/iphone-12.png",
-        "description": {
-          "color": "Black",
-          "cpu": "Apple A14 Bionic",
-          "display": "6.1 inches",
-          "memory": "64Gb"
-        }
-      },
-      {
-        "id": 2,
-        "category": "iphone",
-        "subCategory": "12",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12",
-        "price": 799,
-        "description": {
-          "color": "Black",
-          "cpu": "Apple A14 Bionic",
-          "display": "6.1 inches",
-          "memory": "128Gb"
-        }
-      },
-      {
-        "id": 3,
-        "category": "iphone",
-        "subCategory": "12",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12",
-        "price": 899,
-        "image": "../../assets/images/products/phones/iphone-12.png",
-        "description": {
-          "color": "Black",
-          "cpu": "Apple A14 Bionic",
-          "display": "6.1 inches",
-          "memory": "256Gb"
-        }
-      },
-      {
-        "id": 4,
-        "category": "iphone",
-        "subCategory": "12-mini",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12 mini",
-        "price": 799,
-        "image": "../../assets/images/products/phones/iphone-12-mini.png",
-        "description": {
-          "color": "Black",
-          "cpu": "Apple A14 Bionic",
-          "display": "5.4 inches",
-          "memory": "64Gb"
-        }
-      },
-      {
-        "id": 5,
-        "category": "iphone",
-        "subCategory": "12-mini",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12 mini",
-        "price": 899,
-        "image": "../../assets/images/products/phones/iphone-12-mini.png",
-        "description": {
-          "color": "Black",
-          "cpu": "Apple A14 Bionic",
-          "display": "5.4 inches",
-          "memory": "128Gb"
-        }
-      },
-      {
-        "id": 6,
-        "category": "iphone",
-        "subCategory": "12-mini",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12 mini",
-        "price": 999,
-        "image": "../../assets/images/products/phones/iphone-12-mini.png",
-        "description": {
-          "color": "Black",
-          "cpu": "Apple A14 Bionic",
-          "display": "5.4 inches",
-          "memory": "256Gb"
-        }
-      },
-      {
-        "id": 7,
-        "category": "iphone",
-        "subCategory": "12-pro",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12 Pro",
-        "price": 999,
-        "image": "../../assets/images/products/phones/iphone-12-pro.png",
-        "description": {
-          "color": "Graphite",
-          "cpu": "Apple A14 Bionic",
-          "display": "6.1 inches",
-          "memory": "128Gb"
-        }
-      },
-      {
-        "id": 8,
-        "category": "iphone",
-        "subCategory": "12-pro",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12 Pro",
-        "price": 1099,
-        "image": "../../assets/images/products/phones/iphone-12-pro.png",
-        "description": {
-          "color": "Graphite",
-          "cpu": "Apple A14 Bionic",
-          "display": "6.1 inches",
-          "memory": "256Gb"
-        }
-      },
-      {
-        "id": 9,
-        "category": "iphone",
-        "subCategory": "12-pro",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12 Pro",
-        "price": 1199,
-        "image": "../../assets/images/products/phones/iphone-12-pro.png",
-        "description": {
-          "color": "Graphite",
-          "cpu": "Apple A14 Bionic",
-          "display": "6.1 inches",
-          "memory": "512Gb"
-        }
-      },
-      {
-        "id": 10,
-        "category": "iphone",
-        "subCategory": "12-pro-max",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12 Pro",
-        "price": 1099,
-        "image": "../../assets/images/products/phones/iphone-12-pro-max.png",
-        "description": {
-          "color": "Graphite",
-          "cpu": "Apple A14 Bionic",
-          "display": "6.7 inches",
-          "memory": "128Gb"
-        }
-      },
-      {
-        "id": 11,
-        "category": "iphone",
-        "subCategory": "12-pro-max",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12 Pro",
-        "price": 1199,
-        "image": "../../assets/images/products/phones/iphone-12-pro-max.png",
-        "description": {
-          "color": "Graphite",
-          "cpu": "Apple A14 Bionic",
-          "display": "6.7 inches",
-          "memory": "256Gb"
-        }
-      },
-      {
-        "id": 12,
-        "category": "iphone",
-        "subCategory": "12-pro-max",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iPhone 12 Pro",
-        "price": 1299,
-        "image": "../../assets/images/products/phones/iphone-12-pro-max.png",
-        "description": {
-          "color": "Graphite",
-          "cpu": "Apple A14 Bionic",
-          "display": "6.7 inches",
-          "memory": "512Gb"
-        }
-      }
-    ],
-    "mac": [
-      {
-        "id": 1,
-        "category": "mac",
-        "subCategory": "macbook-air",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Macbook Air M1",
-        "price": 999,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Apple M1 chip",
-          "display": "13.3 inches",
-          "memory": "256Gb"
-        },
-        "image": "../../assets/images/products/mac/macbook-air.png"
-      },
-      {
-        "id": 2,
-        "category": "mac",
-        "subCategory": "macbook-air",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Macbook Air M1",
-        "price": 1249,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Apple M1 chip",
-          "display": "13.3 inches",
-          "memory": "512Gb"
-        },
-        "image": "../../assets/images/products/mac/macbook-air.png"
-      },
-      {
-        "id": 3,
-        "category": "mac",
-        "subCategory": "macbook-pro",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Macbook Pro 13 M1",
-        "price": 1299,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Apple M1 chip",
-          "display": "13.3 inches",
-          "memory": "256Gb"
-        },
-        "image": "../../assets/images/products/mac/macbook-pro.png"
-      },
-      {
-        "id": 4,
-        "category": "mac",
-        "subCategory": "macbook-pro",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Macbook Pro 13 M1",
-        "price": 1499,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Apple M1 chip",
-          "display": "13.3 inches",
-          "memory": "512Gb"
-        },
-        "image": "../../assets/images/products/mac/macbook-pro.png"
-      },
-      {
-        "id": 5,
-        "category": "mac",
-        "subCategory": "macbook-pro",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Macbook Pro 16",
-        "price": 2399,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Intel Core i9",
-          "display": "16 inches",
-          "memory": "256Gb"
-        },
-        "image": "../../assets/images/products/mac/macbook-pro.png"
-      },
-      {
-        "id": 6,
-        "category": "mac",
-        "subCategory": "macbook-pro",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Macbook Pro 16",
-        "price": 2799,
-        "description": {
-          "color": "Space Grey",
-          "cpu": "Intel Core i9",
-          "display": "16 inches",
-          "memory": "1Tb"
-        },
-        "image": "../../assets/images/products/mac/macbook-pro.png"
-      },
-      {
-        "id": 7,
-        "category": "mac",
-        "subCategory": "imac",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iMac",
-        "price": 1099,
-        "description": {
-          "cpu": "Intel Core i5",
-          "display": "21.5 inches",
-          "memory": "256Gb",
-          "graphics": "Intel Iris Plus Graphics 640"
-        },
-        "image": "../../assets/images/products/mac/imac.png"
-      },
-      {
-        "id": 8,
-        "category": "mac",
-        "subCategory": "imac",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iMac",
-        "price": 2299,
-        "description": {
-          "cpu": "Intel Core i7",
-          "display": "27 inches",
-          "memory": "512Gb",
-          "graphics": "Radeon Pro 560X"
-        },
-        "image": "../../assets/images/products/mac/imac.png"
-      },
-      {
-        "id": 9,
-        "category": "mac",
-        "subCategory": "imac-pro",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "iMac Pro",
-        "price": 4999,
-        "description": {
-          "cpu": "Intel Xeon W",
-          "display": "27 inches",
-          "memory": "1Tb",
-          "graphics": "Radeon Pro Vega 56"
-        },
-        "image": "../../assets/images/products/mac/mac-pro.png"
-      },
-      {
-        "id": 10,
-        "category": "mac",
-        "subCategory": "mac-mini",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Mac mini",
-        "price": 699,
-        "description": {
-          "color": "Silver",
-          "cpu": "Apple M1 chip",
-          "memory": "256Gb",
-          "graphics": "Intergated (M1)"
-        },
-        "image": "../../assets/images/products/mac/mac-mini.png"
-      },
-      {
-        "id": 11,
-        "category": "mac",
-        "subCategory": "mac-mini",
-        "inStock": 2,
-        "inWishlist": false,
-        "name": "Mac mini",
-        "price": 899,
-        "description": {
-          "color": "Silver",
-          "cpu": "Apple M1 chip",
-          "memory": "512Gb",
-          "graphics": "Intergated (M1)"
-        },
-        "image": "../../assets/images/products/mac/mac-mini.png"
+        "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fmac%2Fmac-mini-silver.jpg?alt=media&token=d2a96b46-592e-412c-8879-dce0f9749ab1"
       }
     ]
   }
