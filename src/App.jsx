@@ -4,6 +4,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import AppHeader from './containers/AppHeader';
 import ProductList from './containers/ProductList';
 import HomePage from './containers/HomePage';
+import AppFooter from './components/AppFooter';
 import './main.css';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route exact path="/products/:category" component={ProductList} />
         <Redirect to="/" />
       </Switch>
+      <AppFooter />
     </>
   );
 };
