@@ -5,26 +5,23 @@ import PropTypes from 'prop-types';
 import ProductCardIcons from '../../../../components/ProductCardIcons';
 import './ProductCard.css';
 
-const ProductCard = ({ product, productClickHandler, toggleWishListHandler }) => {
-
-  return (
-    <div className="product-card" onClick={() => productClickHandler(product.id)}>
-      <Card border="light">
-        <Card.Img variant="top" src={product?.image} alt="product-image" className="pt-5" />
-        <Card.Body>
-          <Card.Title className="text-center">
-            {`${product?.name} ${product?.description?.memory} ${product?.description?.color}`}
-          </Card.Title>
-          <Card.Subtitle className="mt-2 text-center text-muted">
-            {`Price: $${product?.price.toFixed(2)}`}
-          </Card.Subtitle>
-          {/* TODO refactor e.stopPropagation() */}
-          <ProductCardIcons product={product} toggleWishListHandler={toggleWishListHandler}/>
-        </Card.Body>
-      </Card>
-    </div>
-  );
-};
+const ProductCard = ({ product, productClickHandler, toggleWishListHandler }) => (
+  <div className="product-card" onClick={() => productClickHandler(product.id)}>
+    <Card border="light">
+      <Card.Img variant="top" src={product?.image} alt="product-image" className="pt-5" />
+      <Card.Body>
+        <Card.Title className="text-center">
+          {`${product?.name} ${product?.description?.memory} ${product?.description?.color}`}
+        </Card.Title>
+        <Card.Subtitle className="mt-2 text-center text-muted">
+          {`Price: $${product?.price.toFixed(2)}`}
+        </Card.Subtitle>
+        {/* TODO refactor e.stopPropagation() */}
+        <ProductCardIcons product={product} toggleWishListHandler={toggleWishListHandler}/>
+      </Card.Body>
+    </Card>
+  </div>
+);
 
 ProductCard.propTypes = {
   product: PropTypes.shape({

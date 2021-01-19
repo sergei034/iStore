@@ -9,7 +9,7 @@ const ProductsCarousel = () => (
       <Link to="/products/mac">
         <img
           className="d-block w-100"
-          src="https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/homepage%2Fcarousel%2Fmac.jpg?alt=media&token=b6deb532-26fd-4006-a7b8-e60398927207"
+          src="https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/homepage%2Fcarousel%2Fmac-img.jpg?alt=media&token=7f174508-19c0-4b6b-8bf3-0344598880c1"
           alt="mac"
         />
       </Link>
@@ -19,7 +19,7 @@ const ProductsCarousel = () => (
       <Link to="/products/iphone">
         <img
           className="d-block w-100"
-          src="https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/homepage%2Fcarousel%2Fiphone.jpg?alt=media&token=da4dc3b6-3b58-4623-a52a-e5c851594d99"
+          src="https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/homepage%2Fcarousel%2Fiphone-img.jpg?alt=media&token=e6850ca4-4c6c-4d56-9cbe-ed82e53ad022"
           alt="iphone"
         />
       </Link>
@@ -29,7 +29,7 @@ const ProductsCarousel = () => (
       <Link to="/products/ipad">
         <img
           className="d-block w-100"
-          src="https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/homepage%2Fcarousel%2Fipad.jpg?alt=media&token=28b7ed4b-1d8d-4bb3-8d4a-a4af6c0d7dec"
+          src="https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/homepage%2Fcarousel%2Fipad-img.jpg?alt=media&token=1839bde9-a774-4a59-ab48-fa74e9278701"
           alt="ipad"
         />
       </Link>
@@ -39,7 +39,7 @@ const ProductsCarousel = () => (
       <Link to="/products/apple-watch">
         <img
           className="d-block w-100"
-          src="https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/homepage%2Fcarousel%2Fwatch.jpg?alt=media&token=3e7e467f-4f13-499f-9c6d-85a5c4262208"
+          src="https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/homepage%2Fcarousel%2Fwatch-img.jpg?alt=media&token=30d1ae29-4a9d-436b-88d9-67eeb9022efd"
           alt="apple-watch"
         />
       </Link>
