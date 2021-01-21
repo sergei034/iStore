@@ -16,7 +16,6 @@ const ProductCard = ({ product, productClickHandler, toggleWishListHandler }) =>
         <Card.Subtitle className="mt-2 text-center text-muted">
           {`Price: $${product?.price.toFixed(2)}`}
         </Card.Subtitle>
-        {/* TODO refactor e.stopPropagation() */}
         <ProductCardIcons product={product} toggleWishListHandler={toggleWishListHandler}/>
       </Card.Body>
     </Card>
