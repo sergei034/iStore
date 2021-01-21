@@ -2,21 +2,34 @@ export const capitalize = (string) => (
   `${string[0].toUpperCase()}${string?.slice(1)}`
 );
 
-export const filterProductsByCategory = (productList, category) => (
+const filterProductsByCategory = (productList, category) => (
   productList?.filter(product => product?.category === category)
 );
 
-export const filterProductsFromWishlist = (productList) => (
+const filterProductsFromWishlist = (productList) => (
   productList?.filter(product => product?.inWishlist)
 );
 
-export const filterProductList = (productList, category, pathname) => {
-  if (pathname === '/wishlist') {
-    return filterProductsFromWishlist(productList);
-  } else if (category) {
-    return filterProductsByCategory(productList, category);
+const filterProductsBySearchItem = (productList, searchItem) => (
+  productList?.filter(product => product?.name.toLowerCase().includes(searchItem))
+);
+
+export const filterProductList = (productList, category, pathname, searchItem) => {
+
+  let filteredProducts;
+
+  if (searchItem) {
+    filteredProducts = filterProductsBySearchItem(productList, searchItem);
+  } else {
+    filteredProducts = productList;
   }
-  return productList;
+
+  if (pathname === '/wishlist') {
+    return filterProductsFromWishlist(filteredProducts);
+  } else if (category) {
+    return filterProductsByCategory(filteredProducts, category);
+  }
+  return filteredProducts;
 };
 
 export const findProductById = (productList, targetId) => (

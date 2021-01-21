@@ -8,4 +8,6 @@ export const PUT_TOGGLE_WISHLIST_ERROR = 'PUT_TOGGLE_WISHLIST_ERROR';
 
 export const SET_CURRENT_CATEGORY = 'SET_CURRENT_CATEGORY';
 
+export const SET_SEARCH_ITEM = 'SET_SEARCH_ITEM';
+
 export const NO_PRODUCTS_MESSAGE = 'No products to show...';

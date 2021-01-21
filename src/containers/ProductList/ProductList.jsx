@@ -18,6 +18,7 @@ import { NO_PRODUCTS_MESSAGE } from './constants';
 const ProductList = ({  
   loading, 
   products, 
+  searchItem,
   getProductsRequest, 
   putToggleWishlistRequest, 
 }) => {
@@ -29,8 +30,7 @@ const ProductList = ({
   const { pathname } = useLocation();
   
   useEffect(() => {
-    console.log('render')
-    getProductsRequest(category);
+    getProductsRequest();
   }, [getProductsRequest, category]);
 
   const productClickHandler = (productId) => {
@@ -45,8 +45,8 @@ const ProductList = ({
     putToggleWishlistRequest(product?.id, updatedProduct);
   };
 
-  const getContentForRender = (products, currentCategory, pathname) => {
-    const filteredProducts = filterProductList(products, currentCategory, pathname);
+  const getContentForRender = (products, currentCategory, pathname, searchItem) => {
+    const filteredProducts = filterProductList(products, currentCategory, pathname, searchItem);
     return filteredProducts?.length ? 
       filteredProducts.map((product) => (
         <ProductCard 
@@ -61,7 +61,7 @@ const ProductList = ({
   return (
     <Container className="my-5">
       <Row className="justify-content-center">
-        {loading ? <AppSpinner  /> : getContentForRender(products, category, pathname)}
+        {loading ? <AppSpinner  /> : getContentForRender(products, category, pathname, searchItem)}
       </Row>
       {showProductDetailsModal && 
         <ProductDetailsModal 
@@ -77,6 +77,7 @@ const ProductList = ({
 const mapStateToProps = (state) => ({
   loading: state.products.loading,
   products: state.products.products,
+  searchItem: state.products.searchItem,
 });
 
 const mapDispatchToProps = {
@@ -106,6 +107,7 @@ ProductList.propTypes = {
       }),
     })),
   ]),
+  searchItem: PropTypes.string,
   getProductsRequest: PropTypes.func.isRequired,
   putToggleWishlistRequest: PropTypes.func.isRequired,
 };

@@ -10,3 +10,8 @@ html, body {
   position: relative;
   padding-bottom: 60px;
 }
+
+#root .form-control:focus {
+  border-color: #cccccc;
+  box-shadow: 0 0 8px #cccccc;
+}
