@@ -33,3 +33,8 @@ export const setCurrentCategory = (currentCategory) => ({
   type: constants.SET_CURRENT_CATEGORY,
   payload: { currentCategory },
 });
+
+export const setSearchItem = (currentSearchItem) => ({
+  type: constants.SET_SEARCH_ITEM,
+  payload: { currentSearchItem },
+});

@@ -4,6 +4,7 @@ const initialState = {
   error: null,
   loading: true,
   products: null,
+  searchItem: '',
   success: false,
 };
 
@@ -32,6 +33,12 @@ export default (state = initialState, action) => {
         error: action.payload.error,
         loading: false,
         success: false,
+      };
+    }
+    case constants.SET_SEARCH_ITEM: {
+      return {
+        ...state,
+        searchItem: action.payload.currentSearchItem,
       };
     }
     case constants.PUT_TOGGLE_WISHLIST_REQUEST: {

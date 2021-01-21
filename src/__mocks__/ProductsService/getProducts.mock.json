@@ -376,7 +376,7 @@
         "subCategory": "12-pro-max",
         "inStock": 2,
         "inWishlist": false,
-        "name": "iPhone 12 Pro",
+        "name": "iPhone 12 Pro Max",
         "price": 1099,
         "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-pro-max-space-grey.jpg?alt=media&token=b8232e77-d587-4068-bcce-0202cd03fb9d",
         "description": {
@@ -392,7 +392,7 @@
         "subCategory": "12-pro-max",
         "inStock": 2,
         "inWishlist": false,
-        "name": "iPhone 12 Pro",
+        "name": "iPhone 12 Pro Max",
         "price": 1199,
         "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-pro-max-space-grey.jpg?alt=media&token=b8232e77-d587-4068-bcce-0202cd03fb9d",
         "description": {
@@ -408,7 +408,7 @@
         "subCategory": "12-pro-max",
         "inStock": 2,
         "inWishlist": true,
-        "name": "iPhone 12 Pro",
+        "name": "iPhone 12 Pro Max",
         "price": 1299,
         "image": "https://firebasestorage.googleapis.com/v0/b/istore-react.appspot.com/o/products%2Fiphone%2Fiphone-12-pro-max-space-grey.jpg?alt=media&token=b8232e77-d587-4068-bcce-0202cd03fb9d",
         "description": {

@@ -1,12 +1,20 @@
 .main-navbar {
+  z-index: 100;
   border-radius: 0;
   margin-bottom: 0;
 }
 
-.navbar-brand {
-  font-size: 22px !important;
+.main-navbar .main-navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-item {
+.main-navbar .navbar-brand {
+  font-size: 22px;
+}
+
+.main-navbar .nav-item {
   font-size: 16px;
 }
