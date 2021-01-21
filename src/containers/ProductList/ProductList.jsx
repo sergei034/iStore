@@ -24,16 +24,14 @@ const ProductList = ({
 
   const [showProductDetailsModal, setShowProductDetailsModal] = useState(false);
   const [currentProductId, setCurrentProductId] = useState(null);
-  const [currentCategory, setCurrentCategory] = useState(null);
 
-  // TODO: maybe add pathname to localState and move inside useEffect()
   const { category } = useParams();
   const { pathname } = useLocation();
   
   useEffect(() => {
-    setCurrentCategory(category);
-    getProductsRequest(currentCategory);
-  }, [getProductsRequest, setCurrentCategory, category, currentCategory]);
+    console.log('render')
+    getProductsRequest(category);
+  }, [getProductsRequest, category]);
 
   const productClickHandler = (productId) => {
     setCurrentProductId(productId);
@@ -63,7 +61,7 @@ const ProductList = ({
   return (
     <Container className="my-5">
       <Row className="justify-content-center">
-        {loading ? <AppSpinner  /> : getContentForRender(products, currentCategory, pathname)}
+        {loading ? <AppSpinner  /> : getContentForRender(products, category, pathname)}
       </Row>
       {showProductDetailsModal && 
         <ProductDetailsModal 
