@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useLocation } from 'react-router';
+import PropTypes from 'prop-types';
 
 import HeaderNavMenu from './components/HeaderNavMenu';
 import SearchBar from '../../components/SearchBar/SearchBar';
@@ -40,6 +41,11 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   setSearchItem: setSearchItemAction,
+};
+
+AppHeader.propTypes = {
+  searchItem: PropTypes.string.isRequired, 
+  setSearchItem: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppHeader);

@@ -8,7 +8,10 @@ import AppSpinner from '../../components/AppSpinner';
 import ProductCard from './components/ProductCard';
 import ProductDetailsModal from './components/ProductDetailsModal';
 import NoContentMessage from '../../components/NoContentMessage';
+import Notification from '../../components/Notification';
 import { 
+  clearError as clearErrorAction, 
+  clearSuccess as clearSuccessAction, 
   getProductsRequest as getProductsRequestAction, 
   putToggleWishlistRequest as putToggleWishlistRequestAction, 
 } from './actions';
@@ -16,9 +19,14 @@ import { filterProductList, findProductById } from './ProductList.helpers';
 import { NO_PRODUCTS_MESSAGE } from './constants';
 
 const ProductList = ({  
+  error,
   loading, 
   products, 
   searchItem,
+  success,
+  successMessage,
+  clearError, 
+  clearSuccess, 
   getProductsRequest, 
   putToggleWishlistRequest, 
 }) => {
@@ -60,6 +68,8 @@ const ProductList = ({
 
   return (
     <Container className="my-5">
+      {error && <Notification message={error} style='error' closeHandler={clearError} />}
+      {success && <Notification message={successMessage} style='success' closeHandler={clearSuccess} />}
       <Row className="justify-content-center">
         {loading ? <AppSpinner  /> : getContentForRender(products, category, pathname, searchItem)}
       </Row>
@@ -75,17 +85,26 @@ const ProductList = ({
 };
 
 const mapStateToProps = (state) => ({
+  error: state.products.error,
   loading: state.products.loading,
   products: state.products.products,
   searchItem: state.products.searchItem,
+  success: state.products.success,
+  successMessage: state.products.successMessage,
 });
 
 const mapDispatchToProps = {
+  clearError: clearErrorAction,
+  clearSuccess: clearSuccessAction,
   getProductsRequest: getProductsRequestAction,
   putToggleWishlistRequest: putToggleWishlistRequestAction,
 };
 
 ProductList.propTypes = {
+  error: PropTypes.oneOfType([
+    PropTypes.oneOf([null]),
+    PropTypes.object,
+  ]),
   loading: PropTypes.bool.isRequired,
   products: PropTypes.oneOfType([
     PropTypes.oneOf([null]),
@@ -108,12 +127,17 @@ ProductList.propTypes = {
     })),
   ]),
   searchItem: PropTypes.string,
+  success: PropTypes.bool,
+  successMessage: PropTypes.string,
+  clearError: PropTypes.func.isRequired,
+  clearSuccess: PropTypes.func.isRequired,
   getProductsRequest: PropTypes.func.isRequired,
   putToggleWishlistRequest: PropTypes.func.isRequired,
 };
 
 ProductList.defaultProps = {
   products: null,
+  successMessage: '',
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
