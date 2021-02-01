@@ -1,5 +1,13 @@
 import * as constants from './constants';
 
+export const clearError = () => ({
+  type: constants.CLEAR_ERROR,
+});
+
+export const clearSuccess = () => ({
+  type: constants.CLEAR_SUCCESS,
+});
+
 export const getProductsRequest = () => ({
   type: constants.GET_PRODUCTS_REQUEST,
 });

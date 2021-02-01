@@ -1,0 +1,30 @@
+.notification {
+  min-width: 200px;
+  min-height: 40px;
+  background-color: #80d180 !important;
+  position: fixed;
+  right: 20px;
+  bottom: 60px;
+  z-index: 100;
+  font-size: 12px !important;
+}
+
+.notification .notification-header {
+  border: none;
+  color: #333333;
+}
+
+.notification .notification-body {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notification .error {
+  background-color: #f09090;
+}
+
+.notification .success {
+  background-color: #9afa9a;
+}

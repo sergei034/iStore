@@ -1,4 +1,4 @@
-import { takeLatest, call, put, all } from 'redux-saga/effects';
+import { all, call, delay, put, takeLatest } from 'redux-saga/effects';
 import * as actions from './actions';
 import * as constants from './constants';
 import { getProducts, putToggleWishlist } from './api';
@@ -17,8 +17,10 @@ export function* putToggleToWishlistSaga(data) {
     const { productId, updatedProduct } = data.payload;
     yield call(putToggleWishlist, productId, updatedProduct);
     yield put(actions.putToggleWishlistSuccess(productId, updatedProduct));
+    yield delay(3000);
+    yield put(actions.clearSuccess())
   } catch(error) {
-    yield put(actions.putToggleWishlistError(error));
+    yield put(actions.putToggleWishlistError(error.message));
   }
 };
 

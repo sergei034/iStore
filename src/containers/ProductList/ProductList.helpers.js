@@ -2,6 +2,12 @@ export const capitalize = (string) => (
   `${string[0].toUpperCase()}${string?.slice(1)}`
 );
 
+export const createSuccessMessageForWishlistToggler = (product) => (
+  product?.inWishlist
+    ? `${product?.name} ${product?.description?.memory} ${product?.description?.color} has been added to wishlist`
+    : `${product?.name} ${product?.description?.memory} ${product?.description?.color} has been removed from wishlist`
+);
+
 const filterProductsByCategory = (productList, category) => (
   productList?.filter(product => product?.category === category)
 );
@@ -33,5 +39,5 @@ export const filterProductList = (productList, category, pathname, searchItem) =
 };
 
 export const findProductById = (productList, targetId) => (
-  productList.find(product => product?.id === targetId)
+  productList?.find(product => product?.id === targetId)
 );
