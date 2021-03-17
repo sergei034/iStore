@@ -4,13 +4,13 @@ import { Toast } from 'react-bootstrap';
 
 import './Notification.css';
 
-const Notification = ({ message, style, closeHandler }) => {
+const Notification = ({ message, type, closeHandler }) => {
   return (
-    <Toast className={`${style} notification`} show={true} onClose={closeHandler}>
-      <Toast.Header className={`${style} notification-header`}>
-        <strong className="mr-auto">{style}</strong>
+    <Toast className={`${type} notification`} show={true} onClose={closeHandler}>
+      <Toast.Header className={`${type} notification-header`}>
+        <strong className="mr-auto">{type}</strong>
       </Toast.Header>
-      <Toast.Body className={`${style} notification-body`}>
+      <Toast.Body className={`${type} notification-body`}>
         {message}
       </Toast.Body>
     </Toast>
@@ -19,7 +19,7 @@ const Notification = ({ message, style, closeHandler }) => {
 
 Notification.propTypes = {
   message: PropTypes.string.isRequired, 
-  style: PropTypes.oneOf([
+  type: PropTypes.oneOf([
     'error',
     'success',
   ]).isRequired,
@@ -29,7 +29,7 @@ Notification.propTypes = {
 // TODO: remove
 Notification.defaultProps = {
   message: 'Done',
-  style: 'success',
+  type: 'success',
 };
 
 export default Notification;

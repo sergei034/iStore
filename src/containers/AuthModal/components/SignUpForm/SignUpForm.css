@@ -1,0 +1,7 @@
+.input-state-danger {
+  border-color: #ff5555 !important;
+}
+
+.input-validation-message {
+  color: #ff5555;
+}

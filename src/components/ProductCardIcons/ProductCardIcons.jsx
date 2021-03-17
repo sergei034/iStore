@@ -5,13 +5,14 @@ import { IoCartOutline, IoCart } from 'react-icons/io5';
 
 import './ProductCardIcons.css';
 
-const ProductCardIcons = ({ product, toggleWishListHandler }) => (
+const ProductCardIcons = ({ product, wishlistIconClickHandler, cartIconClickHandler }) => (
   <div className="my-4 d-flex justify-content-between">
     {product?.inWishlist ?
-      <AiFillHeart size="3em" className="heart-icon ml-5" onClick={(e) => toggleWishListHandler(e, product)} /> :
-      <AiOutlineHeart size="3em" className="heart-icon ml-5" onClick={(e) => toggleWishListHandler(e, product)} />}
+      <AiFillHeart size="3em" className="heart-icon ml-5" onClick={(e) => wishlistIconClickHandler(e, product)} /> :
+      <AiOutlineHeart size="3em" className="heart-icon ml-5" onClick={(e) => wishlistIconClickHandler(e, product)} />}
     {product?.inStock ?
-      <IoCartOutline size="3em" className="cart-icon mr-5" /> :
+      // TODO: check if product is already in cart - show different icon
+      <IoCartOutline size="3em" className="cart-icon mr-5" onClick={(e) => cartIconClickHandler(e, product)} /> :
       <div className="sold-out-label mr-5">Sold Out</div>}
   </div>
 );
@@ -33,7 +34,7 @@ ProductCardIcons.propTypes = {
         memory: PropTypes.string,
       }),
     }).isRequired,
-  toggleWishListHandler: PropTypes.func.isRequired,
+  wishlistIconClickHandler: PropTypes.func.isRequired,
 };
 
 export default ProductCardIcons;

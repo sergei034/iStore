@@ -5,7 +5,12 @@ import PropTypes from 'prop-types';
 import ProductCardIcons from '../../../../components/ProductCardIcons';
 import './ProductCard.css';
 
-const ProductCard = ({ product, productClickHandler, toggleWishListHandler }) => (
+const ProductCard = ({ 
+    product, 
+    productClickHandler, 
+    wishlistIconClickHandler, 
+    cartIconClickHandler 
+  }) => (
   <div className="product-card" onClick={() => productClickHandler(product.id)}>
     <Card border="light">
       <Card.Img variant="top" src={product?.image} alt="product-image" className="pt-5" />
@@ -16,7 +21,11 @@ const ProductCard = ({ product, productClickHandler, toggleWishListHandler }) =>
         <Card.Subtitle className="mt-2 text-center text-muted">
           {`Price: $${product?.price.toFixed(2)}`}
         </Card.Subtitle>
-        <ProductCardIcons product={product} toggleWishListHandler={toggleWishListHandler}/>
+        <ProductCardIcons 
+          product={product} 
+          wishlistIconClickHandler={wishlistIconClickHandler}
+          cartIconClickHandler={cartIconClickHandler}
+        />
       </Card.Body>
     </Card>
   </div>
@@ -33,7 +42,8 @@ ProductCard.propTypes = {
       price: PropTypes.number,
     }).isRequired,
   productClickHandler: PropTypes.func.isRequired,
-  toggleWishListHandler: PropTypes.func.isRequired,
+  wishlistIconClickHandler: PropTypes.func.isRequired,
+  cartIconClickHandler: PropTypes.func.isRequired,
 };
 
 export default ProductCard;

@@ -1,8 +1,8 @@
-import axios from './axios-products';
+import axios from 'axios';
 
 export const getProducts = async () => {
   try {
-    return await axios.get('/products.json');
+    return await axios.get('https://istore-react.firebaseio.com/products.json');
   } catch (error) {
     throw error;
   }
@@ -10,7 +10,7 @@ export const getProducts = async () => {
 
 export const putToggleWishlist = async (productId, updatedProduct) => {
   try {
-    return await axios.put(`/products/${productId - 1}.json`, updatedProduct);
+    return await axios.put(`https://istore-react.firebaseio.com/products/${productId - 1}.json`, updatedProduct);
   } catch (error) {
     throw error;
   }
