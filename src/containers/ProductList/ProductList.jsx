@@ -15,16 +15,19 @@ import {
   getProductsRequest as getProductsRequestAction, 
   putToggleWishlistRequest as putToggleWishlistRequestAction, 
 } from './actions';
+import { showAuthModal as showAuthModalAction } from '../AuthModal/actions';
 import { filterProductList, findProductById } from './ProductList.helpers';
 import { NO_PRODUCTS_MESSAGE } from './constants';
 
 const ProductList = ({  
+  isLoggedIn,
   error,
   loading, 
   products, 
   searchItem,
   success,
   successMessage,
+  showAuthModal,
   clearError, 
   clearSuccess, 
   getProductsRequest, 
@@ -46,30 +49,44 @@ const ProductList = ({
     setShowProductDetailsModal(true);
   };
 
-  const toggleWishListHandler = (e, product) => {
+  const wishlistIconClickHandler = (e, product) => {
+    e.stopPropagation();
+    if (isLoggedIn) {
+      const updatedProduct = { ...product, inWishlist: !product?.inWishlist };
+      putToggleWishlistRequest(product?.id, updatedProduct);
+    } else {
+      showAuthModal();
+    }
+  };
+
+  const cartIconClickHandler = (e, product) => {
     // TODO: need refactoring (stopPropagation)
     e.stopPropagation();
-    const updatedProduct = { ...product, inWishlist: !product?.inWishlist };
-    putToggleWishlistRequest(product?.id, updatedProduct);
+    if (isLoggedIn) {
+      // TODO: decide whether add productId & qty or the whole product's object to the cart array?
+    } else {
+      showAuthModal();
+    }
   };
 
   const getContentForRender = (products, currentCategory, pathname, searchItem) => {
     const filteredProducts = filterProductList(products, currentCategory, pathname, searchItem);
-    return filteredProducts?.length ? 
-      filteredProducts.map((product) => (
-        <ProductCard 
-          key={product.id}
-          product={product}
-          productClickHandler={productClickHandler}
-          toggleWishListHandler={toggleWishListHandler}
-        />)) :
-      <NoContentMessage message={NO_PRODUCTS_MESSAGE} />
+    return filteredProducts?.length 
+      ? filteredProducts.map((product) => (
+          <ProductCard 
+            key={product.id}
+            product={product}
+            productClickHandler={productClickHandler}
+            wishlistIconClickHandler={wishlistIconClickHandler}
+            cartIconClickHandler={cartIconClickHandler}
+          />)) 
+      : <NoContentMessage message={NO_PRODUCTS_MESSAGE} />
   };
 
   return (
     <Container className="my-5">
-      {error && <Notification message={error} style='error' closeHandler={clearError} />}
-      {success && <Notification message={successMessage} style='success' closeHandler={clearSuccess} />}
+      {error && <Notification message={error} type="error" closeHandler={clearError} />}
+      {successMessage && <Notification message={successMessage} type="success" closeHandler={clearSuccess} />}
       <Row className="justify-content-center">
         {loading ? <AppSpinner  /> : getContentForRender(products, category, pathname, searchItem)}
       </Row>
@@ -78,22 +95,23 @@ const ProductList = ({
           product={findProductById(products, currentProductId)} 
           showModal={showProductDetailsModal} 
           setShowModal={setShowProductDetailsModal} 
-          toggleWishListHandler={toggleWishListHandler}
+          wishlistIconClickHandler={wishlistIconClickHandler}
         />}
     </Container>
   );
 };
 
 const mapStateToProps = (state) => ({
+  isLoggedIn: state.auth.token !== null,
   error: state.products.error,
   loading: state.products.loading,
   products: state.products.products,
   searchItem: state.products.searchItem,
-  success: state.products.success,
   successMessage: state.products.successMessage,
 });
 
 const mapDispatchToProps = {
+  showAuthModal: showAuthModalAction,
   clearError: clearErrorAction,
   clearSuccess: clearSuccessAction,
   getProductsRequest: getProductsRequestAction,
@@ -101,6 +119,7 @@ const mapDispatchToProps = {
 };
 
 ProductList.propTypes = {
+  isLoggedIn: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.oneOf([null]),
     PropTypes.object,
@@ -127,7 +146,6 @@ ProductList.propTypes = {
     })),
   ]),
   searchItem: PropTypes.string,
-  success: PropTypes.bool,
   successMessage: PropTypes.string,
   clearError: PropTypes.func.isRequired,
   clearSuccess: PropTypes.func.isRequired,
@@ -136,6 +154,7 @@ ProductList.propTypes = {
 };
 
 ProductList.defaultProps = {
+  isLoggedIn: false,
   products: null,
   successMessage: '',
 };

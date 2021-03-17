@@ -6,16 +6,19 @@ import ProductList from './containers/ProductList';
 import HomePage from './containers/HomePage';
 import AppFooter from './components/AppFooter';
 import './main.css';
+import AuthModal from './containers/AuthModal';
+import PrivateRoute from './hocs/PrivateRoute';
+import withAuth from './hocs/withAuth';
 
 const App = () => {
   return (
     <>
       <AppHeader />
+      <AuthModal />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/account" render={() => (<h1 className="text-center">Your account</h1>)} />
-        <Route exact path="/wishlist" component={ProductList} />
-        <Route exact path="/cart" render={() => (<h1 className="text-center">Your cart</h1>)} />
+        <PrivateRoute exact path="/wishlist" component={ProductList} />
+        <PrivateRoute exact path="/cart" render={() => (<h1 className="text-center">Your cart</h1>)} />
         <Route exact path="/products/:category" component={ProductList} />
         <Redirect to="/" />
       </Switch>
@@ -24,4 +27,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withAuth(App);

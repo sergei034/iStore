@@ -3,13 +3,19 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'; 
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { AiOutlineHeart, AiOutlineSearch } from 'react-icons/ai';
-import { IoCartOutline } from 'react-icons/io5';
-import { RiAccountCircleLine } from 'react-icons/ri';
+import { IoCartOutline, IoLogInOutline, IoLogOutOutline } from 'react-icons/io5';
 
 import { APP_TITLE, NAVBAR_CATEGORIES } from '../../constants';
 import './HeaderNavMenu.css';
 
-const HeaderNavMenu = ({ showSearchIcon, showSearchBar, setShowSearchBar }) => (
+const HeaderNavMenu = ({ 
+    isLoggedIn, 
+    logoutRequest,
+    showSearchIcon, 
+    showSearchBar, 
+    setShowSearchBar, 
+    showAuthModal 
+  }) => (
   <Navbar className="main-navbar" bg="dark" variant="dark" >
     <Container>
       <div className="main-navbar-container">
@@ -32,11 +38,26 @@ const HeaderNavMenu = ({ showSearchIcon, showSearchBar, setShowSearchBar }) => (
             >
               <AiOutlineSearch size="2em"/>
             </Nav.Link>
-            <Nav.Link as={Link} to="/wishlist" className="nav-item ml-3">
-              <AiOutlineHeart size="2em"/>
-            </Nav.Link>
-            <Nav.Link as={Link} to="/cart" className="nav-item ml-3">
-              <IoCartOutline size="2em"/>
+            {
+              isLoggedIn && (
+                <Nav.Link as={Link} to="/wishlist" className="nav-item ml-3">
+                  <AiOutlineHeart size="2em"/>
+                </Nav.Link>
+              )
+            }
+            {
+              isLoggedIn && (
+                <Nav.Link as={Link} to="/cart" className="nav-item ml-3">
+                  <IoCartOutline size="2em"/>
+                </Nav.Link>
+              )
+            }
+            <Nav.Link className="nav-item ml-3">
+              {
+                isLoggedIn
+                ? <IoLogOutOutline size="2em" onClick={logoutRequest} />
+                : <IoLogInOutline size="2em" onClick={showAuthModal} />
+              }
             </Nav.Link>
           </Nav>
         </div>
@@ -46,9 +67,16 @@ const HeaderNavMenu = ({ showSearchIcon, showSearchBar, setShowSearchBar }) => (
 );
 
 HeaderNavMenu.propTypes = {
+  isLoggedIn: PropTypes.bool,
   showSearchIcon: PropTypes.bool.isRequired,
   showSearchBar: PropTypes.bool.isRequired,
+  logoutRequest: PropTypes.func.isRequired,
   setShowSearchBar: PropTypes.func.isRequired,
+  showAuthModal: PropTypes.func.isRequired,
+};
+
+HeaderNavMenu.defaultProps = {
+  isLoggedIn: false,
 };
 
 export default HeaderNavMenu;

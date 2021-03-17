@@ -6,7 +6,6 @@ const initialState = {
   loading: true,
   products: null,
   searchItem: '',
-  success: false,
   successMessage: '',
 };
 
@@ -21,7 +20,6 @@ export default (state = initialState, action) => {
     case constants.CLEAR_SUCCESS: {
       return {
         ...state,
-        success: false,
         successMessage: '',
       };
     }
@@ -30,7 +28,6 @@ export default (state = initialState, action) => {
         ...state,
         error: null,
         loading: true,
-        success: false,
         successMessage: '',
       };
     }
@@ -47,7 +44,6 @@ export default (state = initialState, action) => {
         ...state,
         error: action.payload.error,
         loading: false,
-        success: false,
         successMessage: '',
       };
     }
@@ -62,7 +58,6 @@ export default (state = initialState, action) => {
         ...state,
         error: null,
         loading: false,
-        success: false,
         successMessage: '',
       };
     }
@@ -73,7 +68,6 @@ export default (state = initialState, action) => {
           product.id === action.payload.productId ? action.payload.updatedProduct : product),
         loading: false,
         error: null,
-        success: true,
         successMessage: createSuccessMessageForWishlistToggler(action.payload.updatedProduct),
       };
     }
@@ -82,7 +76,6 @@ export default (state = initialState, action) => {
         ...state,
         error: action.payload.error,
         loading: false,
-        success: false,
         successMessage: '',
       };
     }
