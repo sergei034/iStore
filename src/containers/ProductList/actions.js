@@ -8,8 +8,9 @@ export const clearSuccess = () => ({
   type: constants.CLEAR_SUCCESS,
 });
 
-export const getProductsRequest = () => ({
+export const getProductsRequest = (userId, token) => ({
   type: constants.GET_PRODUCTS_REQUEST,
+  payload: { userId, token },
 });
 
 export const getProductsSuccess = (products) => ({
@@ -22,14 +23,29 @@ export const getProductsError = (error) => ({
   payload: { error },
 });
 
-export const putToggleWishlistRequest = (productId, updatedProduct) => ({
-  type: constants.PUT_TOGGLE_WISHLIST_REQUEST,
-  payload: { productId, updatedProduct },
+export const getWishlistRequest = (userId, token) => ({
+  type: constants.GET_WISHLIST_REQUEST,
+  payload: { userId, token },
 });
 
-export const putToggleWishlistSuccess = (productId, updatedProduct) => ({
+export const getWishlistSuccess = (wishlist) => ({
+  type: constants.GET_WISHLIST_SUCCESS,
+  payload: { wishlist },
+});
+
+export const getWishlistError = (error) => ({
+  type: constants.GET_WISHLIST_ERROR,
+  payload: { error },
+});
+
+export const putToggleWishlistRequest = (wishlist, product, userId, token) => ({
+  type: constants.PUT_TOGGLE_WISHLIST_REQUEST,
+  payload: { wishlist, product, userId, token },
+});
+
+export const putToggleWishlistSuccess = (wishlist, product) => ({
   type: constants.PUT_TOGGLE_WISHLIST_SUCCESS,
-  payload: { productId, updatedProduct },
+  payload: { wishlist, product },
 });
 
 export const putToggleWishlistError = (error) => ({

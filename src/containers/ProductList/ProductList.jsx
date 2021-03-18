@@ -16,7 +16,7 @@ import {
   putToggleWishlistRequest as putToggleWishlistRequestAction, 
 } from './actions';
 import { showAuthModal as showAuthModalAction } from '../AuthModal/actions';
-import { filterProductList, findProductById } from './ProductList.helpers';
+import { filterProductList, findProductById, updateWishlist } from './ProductList.helpers';
 import { NO_PRODUCTS_MESSAGE } from './constants';
 
 const ProductList = ({  
@@ -25,8 +25,10 @@ const ProductList = ({
   loading, 
   products, 
   searchItem,
-  success,
   successMessage,
+  token,
+  userId,
+  wishlist,
   showAuthModal,
   clearError, 
   clearSuccess, 
@@ -41,8 +43,8 @@ const ProductList = ({
   const { pathname } = useLocation();
   
   useEffect(() => {
-    getProductsRequest();
-  }, [getProductsRequest, category]);
+    getProductsRequest(userId, token);
+  }, [getProductsRequest, category, userId, token]);
 
   const productClickHandler = (productId) => {
     setCurrentProductId(productId);
@@ -52,8 +54,8 @@ const ProductList = ({
   const wishlistIconClickHandler = (e, product) => {
     e.stopPropagation();
     if (isLoggedIn) {
-      const updatedProduct = { ...product, inWishlist: !product?.inWishlist };
-      putToggleWishlistRequest(product?.id, updatedProduct);
+      const updatedWishlist = updateWishlist(wishlist, product.id);
+      putToggleWishlistRequest(updatedWishlist, product, userId, token);
     } else {
       showAuthModal();
     }
@@ -69,12 +71,13 @@ const ProductList = ({
     }
   };
 
-  const getContentForRender = (products, currentCategory, pathname, searchItem) => {
-    const filteredProducts = filterProductList(products, currentCategory, pathname, searchItem);
+  const getContentForRender = (products, wishlist, currentCategory, pathname, searchItem) => {
+    const filteredProducts = filterProductList(products, wishlist, currentCategory, pathname, searchItem); 
     return filteredProducts?.length 
       ? filteredProducts.map((product) => (
           <ProductCard 
             key={product.id}
+            inWishlist={wishlist.includes(product.id)}
             product={product}
             productClickHandler={productClickHandler}
             wishlistIconClickHandler={wishlistIconClickHandler}
@@ -88,14 +91,16 @@ const ProductList = ({
       {error && <Notification message={error} type="error" closeHandler={clearError} />}
       {successMessage && <Notification message={successMessage} type="success" closeHandler={clearSuccess} />}
       <Row className="justify-content-center">
-        {loading ? <AppSpinner  /> : getContentForRender(products, category, pathname, searchItem)}
+        {loading ? <AppSpinner  /> : getContentForRender(products, wishlist, category, pathname, searchItem)}
       </Row>
       {showProductDetailsModal && 
         <ProductDetailsModal 
           product={findProductById(products, currentProductId)} 
           showModal={showProductDetailsModal} 
           setShowModal={setShowProductDetailsModal} 
+          inWishlist={wishlist.includes(currentProductId)}
           wishlistIconClickHandler={wishlistIconClickHandler}
+          cartIconClickHandler={cartIconClickHandler}
         />}
     </Container>
   );
@@ -108,6 +113,9 @@ const mapStateToProps = (state) => ({
   products: state.products.products,
   searchItem: state.products.searchItem,
   successMessage: state.products.successMessage,
+  token: state.auth.token,
+  userId: state.auth.userId,
+  wishlist: state.products.wishlist,
 });
 
 const mapDispatchToProps = {
@@ -122,7 +130,7 @@ ProductList.propTypes = {
   isLoggedIn: PropTypes.bool,
   error: PropTypes.oneOfType([
     PropTypes.oneOf([null]),
-    PropTypes.object,
+    PropTypes.string,
   ]),
   loading: PropTypes.bool.isRequired,
   products: PropTypes.oneOfType([
@@ -147,6 +155,15 @@ ProductList.propTypes = {
   ]),
   searchItem: PropTypes.string,
   successMessage: PropTypes.string,
+  token: PropTypes.oneOfType([
+    PropTypes.oneOf([null]),
+    PropTypes.string,
+  ]),
+  userId: PropTypes.oneOfType([
+    PropTypes.oneOf([null]),
+    PropTypes.string,
+  ]),
+  wishlist: PropTypes.array,
   clearError: PropTypes.func.isRequired,
   clearSuccess: PropTypes.func.isRequired,
   getProductsRequest: PropTypes.func.isRequired,
@@ -157,6 +174,8 @@ ProductList.defaultProps = {
   isLoggedIn: false,
   products: null,
   successMessage: '',
+  userId: null,
+  wishlist: [],
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

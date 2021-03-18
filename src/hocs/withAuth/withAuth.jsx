@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
-import { logoutRequest, checkAuthStatusRequest } from '../../containers/AuthModal/actions';
+import { checkAuthStatusRequest, logoutRequest, showError } from '../../containers/AuthModal/actions';
 
 const withAuth = (WrappedComponent) => ({ ...props }) => {
   const dispatch = useDispatch();
@@ -20,6 +20,8 @@ const withAuth = (WrappedComponent) => ({ ...props }) => {
     (err) => {
       const { status } = err.response;
       if (status === 401 || status === 403) {
+        dispatch(showError(err.response.message));
+        // TODO: decide whether logout user or not
         dispatch(logoutRequest());
       }
       if (status === 500) {

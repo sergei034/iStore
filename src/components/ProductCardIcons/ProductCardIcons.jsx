@@ -5,9 +5,14 @@ import { IoCartOutline, IoCart } from 'react-icons/io5';
 
 import './ProductCardIcons.css';
 
-const ProductCardIcons = ({ product, wishlistIconClickHandler, cartIconClickHandler }) => (
+const ProductCardIcons = ({ 
+  inWishlist, 
+  product, 
+  wishlistIconClickHandler, 
+  cartIconClickHandler 
+}) => (
   <div className="my-4 d-flex justify-content-between">
-    {product?.inWishlist ?
+    {inWishlist ?
       <AiFillHeart size="3em" className="heart-icon ml-5" onClick={(e) => wishlistIconClickHandler(e, product)} /> :
       <AiOutlineHeart size="3em" className="heart-icon ml-5" onClick={(e) => wishlistIconClickHandler(e, product)} />}
     {product?.inStock ?

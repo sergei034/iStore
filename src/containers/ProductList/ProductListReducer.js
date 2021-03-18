@@ -7,6 +7,7 @@ const initialState = {
   products: null,
   searchItem: '',
   successMessage: '',
+  wishlist: [],
 };
 
 export default (state = initialState, action) => {
@@ -47,6 +48,30 @@ export default (state = initialState, action) => {
         successMessage: '',
       };
     }
+    case constants.GET_WISHLIST_REQUEST: {
+      return {
+        ...state,
+        error: null,
+        loading: true,
+        successMessage: '',
+      };
+    }
+    case constants.GET_WISHLIST_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        wishlist: action.payload.wishlist,
+      };
+    }
+    case constants.GET_WISHLIST_ERROR: {
+      return {
+        ...state,
+        error: action.payload.error,
+        loading: false,
+        successMessage: '',
+      };
+    }
     case constants.SET_SEARCH_ITEM: {
       return {
         ...state,
@@ -62,13 +87,13 @@ export default (state = initialState, action) => {
       };
     }
     case constants.PUT_TOGGLE_WISHLIST_SUCCESS: {
+      const { product, wishlist } = action.payload;
       return {
         ...state,
-        products: state.products.map(product => 
-          product.id === action.payload.productId ? action.payload.updatedProduct : product),
         loading: false,
         error: null,
-        successMessage: createSuccessMessageForWishlistToggler(action.payload.updatedProduct),
+        successMessage: createSuccessMessageForWishlistToggler(wishlist, product),
+        wishlist,
       };
     }
     case constants.PUT_TOGGLE_WISHLIST_ERROR: {
@@ -77,6 +102,13 @@ export default (state = initialState, action) => {
         error: action.payload.error,
         loading: false,
         successMessage: '',
+      };
+    }
+    case constants.LOGOUT_REQUEST: {
+      return {
+        ...state,
+        searchItem: '',
+        wishlist: [],
       };
     }
     default:

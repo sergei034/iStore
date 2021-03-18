@@ -19,6 +19,12 @@ export default (state = initialState, action) => {
         error: null,
       };
     }
+    case constants.SHOW_ERROR: {
+      return {
+        ...state,
+        error: action.payload.error,
+      };
+    }
     case constants.SHOW_AUTH_MODAL: {
       return {
         ...state,
