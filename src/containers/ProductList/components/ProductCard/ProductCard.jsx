@@ -6,6 +6,7 @@ import ProductCardIcons from '../../../../components/ProductCardIcons';
 import './ProductCard.css';
 
 const ProductCard = ({ 
+    inWishlist,
     product, 
     productClickHandler, 
     wishlistIconClickHandler, 
@@ -22,6 +23,7 @@ const ProductCard = ({
           {`Price: $${product?.price.toFixed(2)}`}
         </Card.Subtitle>
         <ProductCardIcons 
+          inWishlist={inWishlist}
           product={product} 
           wishlistIconClickHandler={wishlistIconClickHandler}
           cartIconClickHandler={cartIconClickHandler}
@@ -32,6 +34,7 @@ const ProductCard = ({
 );
 
 ProductCard.propTypes = {
+  inWishlist: PropTypes.bool,
   product: PropTypes.shape({
       color: PropTypes.string,
       id: PropTypes.number,
@@ -45,5 +48,10 @@ ProductCard.propTypes = {
   wishlistIconClickHandler: PropTypes.func.isRequired,
   cartIconClickHandler: PropTypes.func.isRequired,
 };
+
+ProductCard.defaultProps = {
+  inWishlist: false,
+};
+
 
 export default ProductCard;

@@ -1,4 +1,4 @@
-import { all, call, delay, put, takeLatest } from 'redux-saga/effects';
+import { all, call, put, takeLatest } from 'redux-saga/effects';
 import * as actions from './actions';
 import * as constants from './constants';
 import { postLogin, postSignUp } from './api';

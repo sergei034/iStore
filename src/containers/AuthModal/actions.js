@@ -4,6 +4,11 @@ export const clearError = () => ({
   type: constants.CLEAR_ERROR,
 });
 
+export const showError = (error) => ({
+  type: constants.SHOW_ERROR,
+  payload: { error },
+});
+
 export const showAuthModal = () => ({
   type: constants.SHOW_AUTH_MODAL,
 });

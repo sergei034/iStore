@@ -8,7 +8,14 @@ import { capitalize } from '../../ProductList.helpers';
 
 import './ProductDetailsModal.css';
 
-const ProductDetailsModal = ({ product, showModal, setShowModal, wishlistIconClickHandler }) => (
+const ProductDetailsModal = ({ 
+  product, 
+  inWishlist, 
+  showModal, 
+  setShowModal, 
+  wishlistIconClickHandler,
+  cartIconClickHandler,
+}) => (
   <Container>
     <Modal 
       animation={false} 
@@ -32,7 +39,12 @@ const ProductDetailsModal = ({ product, showModal, setShowModal, wishlistIconCli
               </span>
             ))}
             <span className="product-details d-block ml-5">Price: ${product?.price?.toFixed(2)}</span>
-            <ProductCardIcons product={product} wishlistIconClickHandler={wishlistIconClickHandler}/>
+            <ProductCardIcons 
+              product={product} 
+              inWishlist={inWishlist}
+              wishlistIconClickHandler={wishlistIconClickHandler}
+              cartIconClickHandler={cartIconClickHandler}
+            />
           </Col>
         </Row>
         </Modal.Body>
@@ -57,9 +69,15 @@ ProductDetailsModal.propTypes = {
       memory: PropTypes.string,
     }),
   }).isRequired,
+  inWishlist: PropTypes.bool,
   showModal: PropTypes.bool.isRequired,
   setShowModal: PropTypes.func.isRequired,
   wishlistIconClickHandler: PropTypes.func.isRequired,
+  cartIconClickHandler: PropTypes.func.isRequired,
+};
+
+ProductDetailsModal.defaultProps = {
+  inWishlist: false,
 };
 
 export default ProductDetailsModal;

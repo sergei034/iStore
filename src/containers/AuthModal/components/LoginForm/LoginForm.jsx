@@ -18,6 +18,7 @@ const LoginForm = ({ handleLogin, setShowSignUpForm }) => (
           <Form.Group controlId="email" className="mb-4">
             <Form.Label>Email</Form.Label>
             <Form.Control 
+              autoFocus
               autoComplete="off" 
               type="email" 
               className={`${
